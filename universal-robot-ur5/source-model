@@ -1,0 +1,11 @@
+https://github.com/ros-industrial/universal_robot/blob/indigo-devel/ur_description/urdf/ur5.urdf.xacro
+
+using this one: https://github.com/cpaxton/universal_robot/blob/hydro-devel/ur_description/urdf/ur5_robot.urdf
+
+urdf explanation 
+http://gazebosim.org/tutorials/?tut=ros_urdf
+
+/vol/cogimon$ export GAZEBO_MODEL_PATH=/homes/abalayn/workspace/cogimon-gazebo-models:$GAZEBO_MODEL_PATH
+etc/setupEnv.sh
+./bin/gzclient
+./bin/gzserver
