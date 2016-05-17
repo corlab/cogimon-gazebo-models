@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Base.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Base.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -29,7 +29,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Base.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Base.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -74,7 +74,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Shoulder.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Shoulder.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -83,7 +83,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Shoulder.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Shoulder.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -127,7 +127,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/UpperArm.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/UpperArm.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -136,7 +136,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/UpperArm.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/UpperArm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -180,7 +180,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Forearm.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Forearm.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -189,7 +189,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Forearm.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -233,7 +233,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Wrist1.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Wrist1.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -242,7 +242,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Wrist1.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Wrist1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -286,7 +286,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Wrist2.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Wrist2.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -295,7 +295,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Wrist2.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Wrist2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -339,7 +339,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/collision/Wrist3.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/collision/Wrist3.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -348,7 +348,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://ur5-model/ur_description/meshes/ur5/visual/Wrist3.dae</uri>
+            <uri>model://universal-robot-ur5/meshes/ur5/visual/Wrist3.dae</uri>
           </mesh>
         </geometry>
       </visual>
