@@ -12,15 +12,14 @@
   <material name="UR/Grey">
     <color rgba="0.7 0.7 0.7 1.0"/>
   </material>
-  <!-- arm -->
-	<!-- Used for fixing robot to Gazebo 'base_link' -->
+  <!-- world -->
+  <!-- Used for fixing robots 'base_link' to Gazebos 'world' -->
   <link name="world"/>
-
   <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
   </joint>
-
+  <!-- arm -->
   <link name="base_link">
     <visual>
       <geometry>
@@ -38,8 +37,7 @@
       <mass value="4.0"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
-  </link>
- 
+  </link> 
   <joint name="shoulder_pan_joint" type="revolute">
     <parent link="base_link"/>
     <child link="shoulder_link"/>
