@@ -9,3 +9,7 @@ http://gazebosim.org/tutorials/?tut=ros_urdf
 etc/setupEnv.sh
 ./bin/gzclient
 ./bin/gzserver
+
+
+
+a voir : https://github.com/ros-industrial/universal_robot/blob/hydro-devel/ur_description/urdf/ur5.urdf.xacro

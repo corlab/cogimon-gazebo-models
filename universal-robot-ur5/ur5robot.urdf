@@ -13,12 +13,20 @@
     <color rgba="0.7 0.7 0.7 1.0"/>
   </material>
   <!-- arm -->
+	<!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
   <link name="base_link">
     <visual>
       <geometry>
         <mesh filename="package://./meshes/ur5/visual/Base.dae"/>
       </geometry>
-      <origin rpy="0.0 0.0 2.3561944875" xyz="0.0 0.0 0.003"/>
+      <origin rpy="0.0 0.0 2.3561944875" xyz="0.0 0.0 0.0"/>
     </visual>
     <collision>
       <geometry>
@@ -31,6 +39,7 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+ 
   <joint name="shoulder_pan_joint" type="revolute">
     <parent link="base_link"/>
     <child link="shoulder_link"/>
