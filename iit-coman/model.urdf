@@ -1393,5 +1393,7 @@ and to define the end effectors of the robot -->
     <provideFeedback>true</provideFeedback>
    </gazebo>
 
+   <origin xyz="0.0 0.0 0.521" rpy="0 0 0" />
+
 </robot>
 
