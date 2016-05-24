@@ -12,14 +12,14 @@
   <material name="UR/Grey">
     <color rgba="0.7 0.7 0.7 1.0"/>
   </material>
-  <!-- world -->
+ <!-- world -->
   <!-- Used for fixing robots 'base_link' to Gazebos 'world' -->
   <link name="world"/>
   <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
   </joint>
-  <!-- arm -->
+<!-- arm -->
   <link name="base_link">
     <visual>
       <geometry>
@@ -35,16 +35,19 @@
     </collision>
     <inertial>
       <mass value="4.0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <inertia ixx="0.004433" ixy="0.0" ixz="0.0" iyy="0.00443333156" iyz="0.0" izz="0.0072"/>
     </inertial>
   </link> 
+<!-- <inertia ixx="0.0833333 * 4.0 * (3 * 0.06 * 0.06 + 0.05 * 0.05)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 4.0 * (3 * 0.06 * 0.06 + 0.05 * 0.05)" iyz="0.0"
+        izz="0.5 * 4.0 * 0.06 * 0.06" /> -->
   <joint name="shoulder_pan_joint" type="revolute">
     <parent link="base_link"/>
     <child link="shoulder_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.089159"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="150.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="shoulder_link">
     <visual>
@@ -60,17 +63,20 @@
     </collision>
     <inertial>
       <mass value="3.7"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.00193 -0.02561"/>
+      <inertia ixx="0.010267495893" ixy="0.0" ixz="0.0" iyy="0.010267495893" iyz="0.0" izz="0.00666"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.00 -0.0"/>
     </inertial>
   </link>
+<!--<inertia ixx="0.0833333 * 3.7 * (3 * 0.06 * 0.06 + 0.15 * 0.15)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 3.7 * (3 * 0.06 * 0.06 + 0.15 * 0.15)" iyz="0.0"
+        izz="0.5 * 3.7 * 0.06 * 0.06" /> -->
   <joint name="shoulder_lift_joint" type="revolute">
     <parent link="shoulder_link"/>
     <child link="upper_arm_link"/>
     <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.13585 0.0"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="150.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="upper_arm_link">
     <visual>
@@ -87,17 +93,20 @@
     </collision>
     <inertial>
       <mass value="8.393"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.024201 0.2125"/>
+      <inertia ixx="0.22689067591036" ixy="0.0" ixz="0.0" iyy="0.22689067591036" iyz="0.0" izz="0.0151074" />
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.28"/>
     </inertial>
   </link>
+ <!--    <inertia ixx="0.0833333 * 8.393 * (3 * 0.06 * 0.06 + 0.56 * 0.56)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 8.393 * (3 * 0.06 * 0.06 + 0.56 * 0.56)" iyz="0.0"
+        izz="0.5 * 8.393 * 0.06 * 0.06" />-->
   <joint name="elbow_joint" type="revolute">
     <parent link="upper_arm_link"/>
     <child link="forearm_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.1197 0.425"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="150.0" lower="-6.2831853" upper="6.2831853" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="forearm_link">
     <visual>
@@ -113,17 +122,20 @@
     </collision>
     <inertial>
       <mass value="2.275"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0265 0.11993"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0265 0.11993"/> 
+      <inertia ixx="0.049443313556" ixy="0.0" ixz="0.0" iyy="0.049443313556" iyz="0.0" izz="0.004095" />
     </inertial>
   </link>
+ <!--    <inertia ixx="0.0833333 * 2.275 * (3 * 0.06 * 0.06 + 0.5 * 0.5)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 2.275 * (3 * 0.06 * 0.06 + 0.5 * 0.5)" iyz="0.0"
+        izz="0.5 * 2.275 * 0.06 * 0.06" /> -->
   <joint name="wrist_1_joint" type="revolute">
     <parent link="forearm_link"/>
     <child link="wrist_1_link"/>
     <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.0 0.39225"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" lower="-3.14159265" upper="0.7853981625" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="28.0" lower="-3.14159265" upper="0.7853981625" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="wrist_1_link">
     <visual>
@@ -140,17 +152,20 @@
     </collision>
     <inertial>
       <mass value="1.219"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.110949 0.01634"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+       <inertia ixx="0.11117275553088" ixy="0.0" ixz="0.0" iyy="0.11117275553088" iyz="0.0" izz="0.21942" />
     </inertial>
   </link>
+<!--    <inertia ixx="0.0833333 * 1.219 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 1.219 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" iyz="0.0"
+        izz="0.5 * 1.219 * 0.6 * 0.6" /> -->
   <joint name="wrist_2_joint" type="revolute">
     <parent link="wrist_1_link"/>
     <child link="wrist_2_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.093 0.0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10.0" lower="-3.14159265" upper="3.14159265" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="28.0" lower="-3.14159265" upper="3.14159265" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="wrist_2_link">
     <visual>
@@ -167,17 +182,20 @@
     </collision>
     <inertial>
       <mass value="1.219"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0018 0.11099"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.11117275553088" ixy="0.0" ixz="0.0" iyy="0.11117275553088" iyz="0.0" izz="0.21942" />
     </inertial>
   </link>
+<!--    <inertia ixx="0.0833333 * 1.219 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 1.219 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" iyz="0.0"
+        izz="0.5 * 1.219 * 0.6 * 0.6" /> -->
   <joint name="wrist_3_joint" type="revolute">
     <parent link="wrist_2_link"/>
     <child link="wrist_3_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.09465"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" lower="-3.14159265" upper="3.14159265" velocity="3.14159265"/>
-    <dynamics damping="10" friction="0.1"/>
+    <limit effort="28.0" lower="-3.14159265" upper="3.14159265" velocity="3.14159265"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="wrist_3_link">
     <visual>
@@ -192,10 +210,13 @@
     </collision>
     <inertial>
       <mass value="0.1879"/>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.001159 0.0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.017136473145408" ixy="0.0" ixz="0.0" iyy="0.017136473145408" iyz="0.0" izz="0.033822" />
     </inertial>
   </link>
+<!--     <inertia ixx="0.0833333 * 0.1879 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" ixy="0.0" ixz="0.0"
+        iyy="0.0833333 * 0.1879 * (3 * 0.6 * 0.6 + 0.12 * 0.12)" iyz="0.0"
+        izz="0.5 * 0.1879 * 0.6 * 0.6" />-->
   <joint name="ee_fixed_joint" type="fixed">
     <parent link="wrist_3_link"/>
     <child link="ee_link"/>
