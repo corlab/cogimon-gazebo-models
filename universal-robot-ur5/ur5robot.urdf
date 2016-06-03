@@ -12,7 +12,9 @@
   <material name="UR/Grey">
     <color rgba="0.7 0.7 0.7 1.0"/>
   </material>
- <!-- world -->
+ 
+
+<!-- world -->
   <!-- Used for fixing robots 'base_link' to Gazebos 'world' -->
   <link name="world"/>
   <joint name="fixed" type="fixed">
@@ -223,8 +225,32 @@
     <child link="ee_link"/>
     <origin rpy="0.0 0.0 1.570796325" xyz="0.0 0.0823 0.0"/>
   </joint>
-  <link name="ee_link"/>
-  <xacro:ur_arm_transmission name=""/>
+  <link name="ee_link">
+    <collision>
+      <origin xyz="0.025 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0.025 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <mass value="0"/>
+      <inertia
+        ixx="0.000" ixy="0.0" ixz="0.0"
+        iyy="0.000" iyz="0.0"
+        izz="0.000"/>
+    </inertial>
+  </link>
+
+<!--  <xacro:ur_arm_transmission name=""/>-->
   <!--gazebo reference="universal_robot">
     <material>Gazebo/Blue</material>
   </gazebo-->
