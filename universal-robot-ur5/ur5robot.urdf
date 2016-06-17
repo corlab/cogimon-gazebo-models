@@ -243,12 +243,19 @@
     </visual>
     <inertial>
       <origin xyz="0.025 0.025 0.025" rpy="0 0 0"/>
-      <mass value="5"/>
+      <mass value="0.00001"/>
+      <inertia
+        ixx="0.00" ixy="0.0" ixz="0.0"
+        iyy="0.00" iyz="0.0"
+        izz="0.00"/>
+    </inertial>
+<!--
+     <mass value="5"/>
       <inertia
         ixx="0.002083333" ixy="0.0" ixz="0.0"
         iyy="0.002083333" iyz="0.0"
         izz="0.002083333"/>
-    </inertial>
+    </inertial> -->
 </link>
 <!--
   <link name="ee_link">
