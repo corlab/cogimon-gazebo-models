@@ -1,4 +1,5 @@
 build/
+.tb_history
 *~
 *.txt
 !CMakeLists.txt
