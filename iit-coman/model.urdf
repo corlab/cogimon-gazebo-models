@@ -4,9 +4,9 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="coman" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- 
+  <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
-  
+
   DO NOT INCLUDE THIS FILE DIRECTLY! USE coman_robot.urdf.xacro INSTEAD!
 
   Author: Enrico Mingo & Alessio Rocchi
@@ -41,14 +41,14 @@
 ##
 ##
 ## options:
-## 1) COMAN classic without the staff to carry the sensor. 
+## 1) COMAN classic without the staff to carry the sensor.
 ##      Torso frame is connected to gaze link through a gaze_joint "fixed"
 ## 2) COMAN with staff and xtion sensor. Torso frame is connected to a xtion_staff_link through
-##      a xtion_staff_joint "fixed". Xtion_staff_link is then connected to gaze_link through gaze_joint "fixed". 
+##      a xtion_staff_joint "fixed". Xtion_staff_link is then connected to gaze_link through gaze_joint "fixed".
 ##
 ####################################################
 #
-# 1/2 (true/false) 
+# 1/2 (true/false)
 #
 -->
   <!-- ***********  MODEL COLORS *********** -->
@@ -72,9 +72,9 @@ The coordinate frame called gaze defines the head position and orientation. The 
     <origin rpy="0 0 0" xyz="0 0 0.1"/>
   </joint>
   <!-- ************ COMAN BASE ************** -->
-  <!-- 
+  <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
-  
+
   DO NOT INCLUDE THIS FILE DIRECTLY! USE coman_robot.urdf.xacro INSTEAD!
 
   Author: Enrico Mingo & Alessio Rocchi
@@ -892,7 +892,7 @@ and to define the end effectors of the robot -->
   <!-- position and orientation of the arm regardless of the tool (grasping device for instance) attached to it -->
   <link name="l_wrist"/>
   <link name="r_wrist"/>
-  <!-- distance from last motor to FT sensor 
+  <!-- distance from last motor to FT sensor
 		The value needs to be subtracted to the *FOrearmPlate joint z origin,
 		and in order to be compensated in the following joint and link,
 		it neeeds to be added in return to the following joint (*Wrj1) z origin
@@ -1392,6 +1392,359 @@ and to define the end effectors of the robot -->
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
+
+  <gazebo reference="Waist">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWL">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWS">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWYTorso">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/blue</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RHipMot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RThighUpLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RThighLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RFootmot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RFoot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LHipMot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LThighUpLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LThighLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LFootmot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LFoot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShp">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShr">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShy">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RElb">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShp">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShr">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShy">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LElb">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LForearm">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LWrMot2">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LWrMot3">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RForearm">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RWrMot2">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RWrMot3">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RSoftHand">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LSoftHand">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
 
    <origin xyz="0.0 0.0 0.521" rpy="0 0 0" />
 
