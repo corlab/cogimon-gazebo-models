@@ -4,9 +4,9 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="coman" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- 
+  <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
-  
+
   DO NOT INCLUDE THIS FILE DIRECTLY! USE coman_robot.urdf.xacro INSTEAD!
 
   Author: Enrico Mingo & Alessio Rocchi
@@ -40,14 +40,14 @@
 ##
 ##
 ## options:
-## 1) COMAN classic without the staff to carry the sensor. 
+## 1) COMAN classic without the staff to carry the sensor.
 ##      Torso frame is connected to gaze link through a gaze_joint "fixed"
 ## 2) COMAN with staff and xtion sensor. Torso frame is connected to a xtion_staff_link through
-##      a xtion_staff_joint "fixed". Xtion_staff_link is then connected to gaze_link through gaze_joint "fixed". 
+##      a xtion_staff_joint "fixed". Xtion_staff_link is then connected to gaze_link through gaze_joint "fixed".
 ##
 ####################################################
 #
-# 1/2 (true/false) 
+# 1/2 (true/false)
 #
 -->
   <!-- ***********  MODEL COLORS *********** -->
@@ -71,9 +71,9 @@ The coordinate frame called gaze defines the head position and orientation. The 
     <origin rpy="0 0 0" xyz="0 0 0.1"/>
   </joint>
   <!-- ************ COMAN BASE ************** -->
-  <!-- 
+  <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
-  
+
   DO NOT INCLUDE THIS FILE DIRECTLY! USE coman_robot.urdf.xacro INSTEAD!
 
   Author: Enrico Mingo & Alessio Rocchi
@@ -97,13 +97,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="Waist_visual">
-        <mesh filename="package://coman_urdf/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <geometry name="Waist_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -128,13 +128,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <material name="dark_grey"/>
       <geometry name="DWL_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <geometry name="DWL_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -148,13 +148,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <material name="dark_grey"/>
       <geometry name="DWS_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <geometry name="DWS_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -168,13 +168,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0.0 -0.68662053"/>
       <material name="red"/>
       <geometry name="DWYTorso_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0.0 -0.68662053"/>
       <geometry name="DWYTorso_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -234,13 +234,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -254,13 +254,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RThighUpLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <geometry name="RThighUpLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -274,13 +274,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="RThighLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <geometry name="RThighLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -294,13 +294,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -314,13 +314,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="RFootmot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <geometry name="RFootmot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -334,13 +334,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 -3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="RFoot_visual">
-        <mesh filename="package://coman_urdf/meshes/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 -3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <geometry name="RFoot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -355,13 +355,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -375,13 +375,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="LThighUpLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <geometry name="LThighUpLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -395,13 +395,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="LThighLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <geometry name="LThighLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -415,13 +415,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="LLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <geometry name="LLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -435,13 +435,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="LFootmot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <geometry name="LFootmot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -455,13 +455,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 -3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="LFoot_visual">
-        <mesh filename="package://coman_urdf/meshes/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 -3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <geometry name="LFoot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -667,13 +667,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.0825 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="RShp_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.0825 -0.844329"/>
       <geometry name="RShp_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -687,13 +687,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="RShr_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.844329"/>
       <geometry name="RShr_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -707,13 +707,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.79952053"/>
       <material name="dark_grey"/>
       <geometry name="RShy_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.79952053"/>
       <geometry name="RShy_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -727,13 +727,13 @@ and to define the end effectors of the robot -->
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="RElb_visual">
-        <mesh filename="package://coman_urdf/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <geometry name="RElb_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -748,13 +748,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.0825 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="LShp_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.0825 -0.844329"/>
       <geometry name="LShp_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -768,13 +768,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="LShr_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.844329"/>
       <geometry name="LShr_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -788,13 +788,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.79952053"/>
       <material name="dark_grey"/>
       <geometry name="LShy_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.79952053"/>
       <geometry name="LShy_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -808,13 +808,13 @@ and to define the end effectors of the robot -->
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="LElb_visual">
-        <mesh filename="package://coman_urdf/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <geometry name="LElb_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -904,13 +904,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.0055 -0.1558 -0.6175"/>
       <material name="dark_grey"/>
       <geometry name="LForearm_visual">
-        <mesh filename="package://coman_urdf/meshes/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.0055 -0.1558 -0.6175"/>
       <geometry name="LForearm_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -925,13 +925,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.0055 -0.1558 -0.6175"/>
       <material name="dark_grey"/>
       <geometry name="RForearm_visual">
-        <mesh filename="package://coman_urdf/meshes/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.0055 -0.1558 -0.6175"/>
       <geometry name="RForearm_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-no-forearms/meshes/simple/ForearmOld.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -991,5 +991,503 @@ and to define the end effectors of the robot -->
     <!--origin xyz="-0.072 -0.0068 0.044" rpy="0 ${PI} 0"/-->
     <origin rpy="0 0 0" xyz="-0.072 -0.0068 0.044"/>
   </joint>
+
+<gazebo reference="LFoot">
+     <kp>1000000.0</kp>
+     <kd>100.0</kd>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
+     <fdir1>1 0 0</fdir1>
+     <maxVel>1.0</maxVel>
+     <minDepth>0.0</minDepth>
+   </gazebo>
+
+   <gazebo reference="RFoot">
+     <kp>1000000.0</kp>
+     <kd>100.0</kd>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
+     <fdir1>1 0 0</fdir1>
+     <maxVel>1.0</maxVel>
+     <minDepth>0.00</minDepth>
+   </gazebo>
+
+   <gazebo reference="WaistSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="WaistLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="WaistYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+   <gazebo reference="RHipSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RHipLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RHipYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RKneeSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RAnkLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RAnkSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+
+   <gazebo reference="LHipSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LHipLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LHipYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LKneeSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LAnkLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LAnkSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+   <gazebo reference="RShSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RShLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RShYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RElbj">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+   <gazebo reference="RForearmPlate">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RWrj1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RWrj2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+   <gazebo reference="LShSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LShLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LShYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LElbj">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+   <gazebo reference="LForearmPlate">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LWrj1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LWrj2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+  <gazebo reference="Waist">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWL">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWS">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="DWYTorso">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/blue</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RHipMot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RThighUpLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RThighLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RFootmot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RFoot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LHipMot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LThighUpLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LThighLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LLowLeg">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LFootmot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LFoot">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShp">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShr">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RShy">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RElb">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShp">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShr">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LShy">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LElb">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LForearm">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LWrMot2">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LWrMot3">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RForearm">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RWrMot2">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RWrMot3">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="RSoftHand">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="LSoftHand">
+    <visual>
+      <material>
+        <script>
+          <uri>model://iit-coman/materials/scripts/iit-coman.material</uri>
+          <name>coman/darkgrey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+   <origin xyz="0.0 0.0 0.521" rpy="0 0 0" />
+
 </robot>
 
