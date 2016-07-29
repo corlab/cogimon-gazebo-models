@@ -373,6 +373,40 @@
         </dynamics>
       </axis>
     </joint>
+<link name='ee_link'>
+<pose>0 0 -0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 1 0 -0 0</pose>
+        <mass>0</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='ee_link_collision'>
+        <pose>0.025 0 0 0 -0 0</pose>
+        <geometry>
+          <box size="0.05 0.05 0.05"/>
+        </geometry>
+      </collision>
+      <visual name='ee_link_visual'>
+        <pose>0.025 0 0 0 -0 0</pose>
+        <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+  </link>
+
+
+
      <pose frame=''>0 0 0 0 -0 0</pose>
   </model>
 </sdf>
