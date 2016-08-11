@@ -37,6 +37,7 @@
 # 1/2 (true/false) 
 #
 -->
+  <virtual_joint child_link="base_link" name="virtual_joint" parent_frame="world" type="floating"/>
   <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
   <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
   <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
@@ -78,6 +79,99 @@
     <group name="right_leg"/>
     <group name="torso"/>
   </group>
+  <rtt-gazebo reference="torso">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="1000." reference="WaistLat"/>
+      <gains D="0.1" I="0." P="1000." reference="WaistSag"/>
+      <gains D="0.1" I="0." P="1000." reference="WaistYaw"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="WaistLat" stiffness="300."/>
+      <gains damping="30." reference="WaistSag" stiffness="300."/>
+      <gains damping="30." reference="WaistYaw" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="right_arm">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="1000." reference="RShSag"/>
+      <gains D="0.1" I="0." P="1000." reference="RShLat"/>
+      <gains D="0.1" I="0." P="600." reference="RShYaw"/>
+      <gains D="0.1" I="0." P="1000." reference="RElbj"/>
+      <gains D="0.1" I="0." P="100." reference="RForearmPlate"/>
+      <gains D="0.1" I="0." P="100." reference="RWrj1"/>
+      <gains D="0.01" I="0." P="10." reference="RWrj2"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="RShSag" stiffness="300."/>
+      <gains damping="30." reference="RShLat" stiffness="300."/>
+      <gains damping="30." reference="RShYaw" stiffness="300."/>
+      <gains damping="30." reference="RElbj" stiffness="300."/>
+      <gains damping="30." reference="RForearmPlate" stiffness="300."/>
+      <gains damping="30." reference="RWrj1" stiffness="300."/>
+      <gains damping="30." reference="RWrj2" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="left_arm">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="1000." reference="LShSag"/>
+      <gains D="0.1" I="0." P="1000." reference="LShLat"/>
+      <gains D="0.1" I="0." P="600." reference="LShYaw"/>
+      <gains D="0.1" I="0." P="1000." reference="LElbj"/>
+      <gains D="0.1" I="0." P="100." reference="LForearmPlate"/>
+      <gains D="0.1" I="0." P="100." reference="LWrj1"/>
+      <gains D="0.01" I="0." P="10." reference="LWrj2"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="LShSag" stiffness="300."/>
+      <gains damping="30." reference="LShLat" stiffness="300."/>
+      <gains damping="30." reference="LShYaw" stiffness="300."/>
+      <gains damping="30." reference="LElbj" stiffness="300."/>
+      <gains damping="30." reference="LForearmPlate" stiffness="300."/>
+      <gains damping="30." reference="LWrj1" stiffness="300."/>
+      <gains damping="30." reference="LWrj2" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="right_leg">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="3000." reference="RHipSag"/>
+      <gains D="0.1" I="0." P="5000." reference="RHipLat"/>
+      <gains D="0.1" I="0." P="3000." reference="RHipYaw"/>
+      <gains D="0.1" I="0." P="3000." reference="RKneeSag"/>
+      <gains D="0.1" I="0." P="4000." reference="RAnkLat"/>
+      <gains D="01" I="0." P="3000." reference="RAnkSag"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="RHipSag" stiffness="300."/>
+      <gains damping="30." reference="RHipLat" stiffness="300."/>
+      <gains damping="30." reference="RHipYaw" stiffness="300."/>
+      <gains damping="30." reference="RKneeSag" stiffness="300."/>
+      <gains damping="30." reference="RAnkLat" stiffness="300."/>
+      <gains damping="30." reference="RAnkSag" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="left_leg">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="3000." reference="LHipSag"/>
+      <gains D="0.1" I="0." P="5000." reference="LHipLat"/>
+      <gains D="0.1" I="0." P="3000." reference="LHipYaw"/>
+      <gains D="0.1" I="0." P="3000." reference="LKneeSag"/>
+      <gains D="0.1" I="0." P="4000." reference="LAnkLat"/>
+      <gains D="01" I="0." P="3000." reference="LAnkSag"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="LHipSag" stiffness="300."/>
+      <gains damping="30." reference="LHipLat" stiffness="300."/>
+      <gains damping="30." reference="LHipYaw" stiffness="300."/>
+      <gains damping="30." reference="LKneeSag" stiffness="300."/>
+      <gains damping="30." reference="LAnkLat" stiffness="300."/>
+      <gains damping="30." reference="LAnkSag" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
     <disable_collisions link1="DWL" link2="DWS" reason="Adjacent"/>
     <disable_collisions link1="DWL" link2="DWYTorso" reason="Default"/>
     <disable_collisions link1="DWL" link2="LFoot" reason="Never"/>
