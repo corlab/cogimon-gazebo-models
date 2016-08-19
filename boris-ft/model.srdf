@@ -17,11 +17,12 @@
     <chain base_link="right_lwr_arm_base_link" tip_link="right_lwr_arm_7_link"/>
   </group>
   <group name="chains">
-    <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
+    <!--THIS HAS TO BE THE LAST GROUP IN THE FILE <group name="right_full_arm"/>-->
     <group name="left_full_arm"/>
-	<group name="right_full_arm"/>
+	
   </group>
   <rtt-gazebo reference="left_full_arm">
+    <hardware type="lwr" address="192.168.0.21"/>
     <controller type="JointPositionCtrl">
       <gains D="0.1" I="0." P="1000." reference="left_lwr_arm_0_joint"/>
       <gains D="0.1" I="0." P="1000." reference="left_lwr_arm_1_joint"/>

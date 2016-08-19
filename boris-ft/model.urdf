@@ -463,7 +463,7 @@
     <gazebo reference="left_lwr_arm_7_link">
       <!--  <material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="left_lwr_arm_ft_sensor_joint" type="revolute">
+<joint name="left_lwr_arm_ft_sensor_joint" type="fixed">
 	<origin rpy="0 0 0" xyz="0 0 0.0333" />
 	<limit effort="0" lower="0" upper="0" velocity="0" />
     <parent link="left_lwr_arm_7_link"/>
