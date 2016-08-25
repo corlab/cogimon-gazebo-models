@@ -11,7 +11,7 @@
     <link name="Waist"/>
   </group-->
   <group name="left_full_arm">
-    <chain base_link="left_lwr_arm_base_link" tip_link="left_lwr_arm_7_link"/>
+    <chain base_link="left_lwr_arm_base_link" tip_link="left_lwr_tool_link"/>
   </group>
   <group name="right_full_arm">
     <chain base_link="right_lwr_arm_base_link" tip_link="right_lwr_arm_7_link"/>
