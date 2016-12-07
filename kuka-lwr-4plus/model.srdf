@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <robot name="kuka-lwr" xmlns:xacro="http://ros.org/wiki/xacro">
   <!--virtual_joint child_link="base_link" name="virtual_joint" parent_frame="world" type="floating"/-->
 
