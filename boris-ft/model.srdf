@@ -14,12 +14,11 @@
     <chain base_link="left_lwr_arm_base_link" tip_link="left_lwr_tool_link"/>
   </group>
   <group name="right_full_arm">
-    <chain base_link="right_lwr_arm_base_link" tip_link="right_lwr_arm_7_link"/>
+    <chain base_link="right_lwr_arm_base_link" tip_link="right_lwr_tool_link"/>
   </group>
   <group name="chains">
-    <!--THIS HAS TO BE THE LAST GROUP IN THE FILE <group name="right_full_arm"/>-->
     <group name="left_full_arm"/>
-	
+    <group name="right_full_arm"/>
   </group>
   <rtt-gazebo reference="left_full_arm">
     <hardware type="lwr" address="192.168.0.21"/>

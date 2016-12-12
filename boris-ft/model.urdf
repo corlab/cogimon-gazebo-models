@@ -929,7 +929,7 @@
     <gazebo reference="right_lwr_arm_7_link">
       <!--  <material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="right_lwr_arm_ft_sensor_joint" type="revolute">
+<joint name="right_lwr_arm_ft_sensor_joint" type="fixed">
 	<origin rpy="0 0 0" xyz="0 0 0.0333" />
 	<limit effort="0" lower="0" upper="0" velocity="0" />
     <parent link="right_lwr_arm_7_link"/>
@@ -959,7 +959,7 @@
        <inertia ixx="0.000110838" ixy="0.0" ixz="0.0" iyy="0.000110838" iyz="0.0" izz="0.000174548"/>
      </inertial>
 			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
-			<sensor type='force_torque' name='ft_sensor_left'>"0.037"
+			<sensor type='force_torque' name='ft_sensor_right'>"0.037"
 				<update_rate>1000</update_rate>
 			</sensor>-->
 		</link> 
@@ -968,6 +968,50 @@
 		<!--<sensor type="force_torque" name="ft1"/>
         <material value="kuka-lwr.material"/>-->
     </gazebo>
+
+<joint name="right_lwr_ft_sensor_tool_joint" type="fixed">
+	<origin rpy="0 0 0" xyz="0 0 0.075" />
+	<limit effort="0" lower="0" upper="0" velocity="0" />
+    <parent link="right_lwr_ft_link"/>
+    <child link="right_lwr_tool_link"/>
+	
+  </joint>
+<gazebo reference="right_lwr_ft_sensor_tool_joint">
+<provideFeedback>1</provideFeedback>
+<!--<sensor name="right_force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <visualize>true</visualize>
+          <update_rate>100</update_rate>
+		  <force_torque>
+			<frame>child</frame>
+			<measure_direction>child_to_parent</measure_direction>
+		  </force_torque>
+        </sensor>-->
+</gazebo>
+
+<link name="right_lwr_tool_link">
+			<collision name="tool_collision">
+				<origin rpy="0 0 0" xyz="0 0 -0.075" />
+				<geometry>
+					<mesh filename="model://boris-ft/meshes/boris-foot-white.stl" scale="1 1 1" />
+				</geometry>
+			</collision>
+			<visual name="tool_visual">
+				<origin rpy="0 0 0" xyz="0 0 -0.075" />
+				<geometry>
+					<mesh filename="model://boris-ft/meshes/boris-foot-white.stl" scale="1 1 1" />
+				</geometry>
+			</visual>
+			<inertial>
+       <mass value="0.255"/>
+       <inertia ixx="0.000110838" ixy="0.0" ixz="0.0" iyy="0.000110838" iyz="0.0" izz="0.000174548"/>
+     </inertial>
+			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
+			<sensor type='force_torque' name='ft_sensor_right'>"0.037"
+				<update_rate>1000</update_rate>
+			</sensor>-->
+		</link> 
+
 
 
 
