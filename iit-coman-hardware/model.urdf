@@ -1281,7 +1281,7 @@ and to define the end effectors of the robot -->
   This file groups files to use COMAN in GAZEBO
   
   -->
-  <!--gazebo reference="imu_link">
+  <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
       <always_on>1</always_on>
       <update_rate>1000</update_rate>
@@ -1305,9 +1305,9 @@ and to define the end effectors of the robot -->
             </accel>
           </noise>
           -->
-      <!--/imu>
+      </imu>
     </sensor>
-  </gazebo-->
+  </gazebo>
   <!-- contact model for foot surface -->
   <gazebo reference="LFoot">
     <kp>1000000.0</kp>
@@ -1453,6 +1453,54 @@ and to define the end effectors of the robot -->
     <provideFeedback>true</provideFeedback>
   </gazebo>
   <!-- YARP PLUGINS for GAZEBO SIMULATION -->
+  <gazebo reference="RForearmPlate">
+    <sensor name="right_arm" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="LForearmPlate">
+    <sensor name="left_arm" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="LAnkSag">
+    <sensor name="left_leg" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 -0.065 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="RAnkSag">
+    <sensor name="right_leg" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 -0.065 0 0 0</pose>
+    </sensor>
+  </gazebo>
   <gazebo reference="Waist">
     <material>Gazebo/DarkGrey</material>
   </gazebo>
