@@ -1142,7 +1142,7 @@ and to define the end effectors of the robot -->
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.07 0.07 0.07"/>
+        <box size="0.07 0.01 0.07"/>
       </geometry>
       <material name="Cyan">
         <color rgba="0 1.0 1.0 1.0"/>
@@ -1151,7 +1151,29 @@ and to define the end effectors of the robot -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.07 0.07 0.07"/>
+        <box size="0.07 0.01 0.07"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="RSoftHandFingers">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.01 0.07"/>
+      </geometry>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.01 0.07"/>
       </geometry>
     </collision>
   </link>
@@ -1164,7 +1186,7 @@ and to define the end effectors of the robot -->
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.07 0.07 0.07"/>
+        <box size="0.07 0.01 0.07"/>
       </geometry>
       <material name="Cyan">
         <color rgba="0 1.0 1.0 1.0"/>
@@ -1173,25 +1195,63 @@ and to define the end effectors of the robot -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.07 0.07 0.07"/>
+        <box size="0.07 0.01 0.07"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="LSoftHandFingers">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.01 0.07"/>
+      </geometry>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.01 0.07"/>
       </geometry>
     </collision>
   </link>
   <!-- JOINTS -->
-  <joint name="r_handj" type="revolute">
+  <joint name="r_handj" type="fixed">
     <parent link="RWrMot3"/>
     <child link="RSoftHand"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.04"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0.0" upper="1.57075" velocity="4.0"/>
+    <origin rpy="0 0 0" xyz="0 -0.03 -0.07"/>
+    <!--axis xyz="1 0 0" />
+        <limit velocity="4.0" effort="5" lower="0.0" upper="1.57075" />
+        <dynamics friction="0" damping="3.0"/-->
+  </joint>
+  <joint name="r_handj2" type="prismatic">
+    <parent link="RSoftHand"/>
+    <child link="RSoftHandFingers"/>
+    <origin rpy="0 0 0" xyz="0 0.06 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50" lower="-0.05" upper="0.0" velocity="4.0"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
-  <joint name="l_handj" type="revolute">
+  <joint name="l_handj" type="fixed">
     <parent link="LWrMot3"/>
     <child link="LSoftHand"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.04"/>
-    <axis xyz="-1 0 0"/>
-    <limit effort="5" lower="0.0" upper="1.57075" velocity="4.0"/>
+    <origin rpy="0 0 0" xyz="0 0.03 -0.07"/>
+    <!--axis xyz="-1 0 0" />
+        <limit velocity="4.0" effort="5" lower="0.0" upper="1.57075" />
+        <dynamics friction="0" damping="3.0"/-->
+  </joint>
+  <joint name="l_handj2" type="prismatic">
+    <parent link="LSoftHand"/>
+    <child link="LSoftHandFingers"/>
+    <origin rpy="0 0 0" xyz="0 -0.06 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!-- Reference frames in hands -->
@@ -1416,7 +1476,7 @@ and to define the end effectors of the robot -->
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="r_handj">
+  <gazebo reference="r_handj2">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -1448,11 +1508,10 @@ and to define the end effectors of the robot -->
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="l_handj">
+  <gazebo reference="l_handj2">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- YARP PLUGINS for GAZEBO SIMULATION -->
   <gazebo reference="RForearmPlate">
     <sensor name="right_arm" type="force_torque">
       <force_torque>

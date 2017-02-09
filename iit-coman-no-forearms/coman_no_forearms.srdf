@@ -59,8 +59,8 @@
     <!-- NEAREST JOINT TO FORCE_TORQUE SENSOR -->
     <!--<joint name="LAnkSag"/>
             <joint name="RAnkSag"/>-->
-    <joint name="l_ankle_joint"/>
-    <joint name="r_ankle_joint"/>
+    <joint name="l_leg_ft_joint"/>
+    <joint name="r_leg_ft_joint"/>
   </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="l_sole"/>

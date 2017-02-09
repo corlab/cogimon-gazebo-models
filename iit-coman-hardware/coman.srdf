@@ -50,10 +50,10 @@
     <link name="imu_link"/>
   </group>
   <group name="left_hand">
-    <chain base_link="LWrMot3" tip_link="LSoftHand"/>
+    <chain base_link="LWrMot3" tip_link="LSoftHandFingers"/>
   </group>
   <group name="right_hand">
-    <chain base_link="RWrMot3" tip_link="RSoftHand"/>
+    <chain base_link="RWrMot3" tip_link="RSoftHandFingers"/>
   </group>
   <group name="left_arm">
     <chain base_link="DWYTorso" tip_link="l_wrist"/>
@@ -101,12 +101,12 @@
   </rtt-gazebo>
   <rtt-gazebo reference="left_hand">
     <controller type="JointPositionCtrl">
-      <gains D="0.01" I="0." P="10." reference="l_handj"/>
+      <gains D="0.1" I="0." P="500." reference="l_handj2"/>
     </controller>
   </rtt-gazebo>
   <rtt-gazebo reference="right_hand">
     <controller type="JointPositionCtrl">
-      <gains D="0.01" I="0." P="10." reference="r_handj"/>
+      <gains D="0.1" I="0." P="500." reference="r_handj2"/>
     </controller>
   </rtt-gazebo>
   <rtt-gazebo reference="right_arm">
