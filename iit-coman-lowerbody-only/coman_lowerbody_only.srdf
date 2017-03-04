@@ -66,6 +66,44 @@
     <group name="left_leg"/>
     <group name="right_leg"/>
   </group>
+<rtt-gazebo reference="right_leg">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="3000." reference="RHipSag"/>
+      <gains D="0.1" I="0." P="5000." reference="RHipLat"/>
+      <gains D="0.1" I="0." P="3000." reference="RHipYaw"/>
+      <gains D="0.1" I="0." P="3000." reference="RKneeSag"/>
+      <gains D="0.1" I="0." P="4000." reference="RAnkLat"/>
+      <gains D="01" I="0." P="3000." reference="RAnkSag"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="RHipSag" stiffness="300."/>
+      <gains damping="30." reference="RHipLat" stiffness="300."/>
+      <gains damping="30." reference="RHipYaw" stiffness="300."/>
+      <gains damping="30." reference="RKneeSag" stiffness="300."/>
+      <gains damping="30." reference="RAnkLat" stiffness="300."/>
+      <gains damping="30." reference="RAnkSag" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="left_leg">
+    <controller type="JointPositionCtrl">
+      <gains D="0.1" I="0." P="3000." reference="LHipSag"/>
+      <gains D="0.1" I="0." P="5000." reference="LHipLat"/>
+      <gains D="0.1" I="0." P="3000." reference="LHipYaw"/>
+      <gains D="0.1" I="0." P="3000." reference="LKneeSag"/>
+      <gains D="0.1" I="0." P="4000." reference="LAnkLat"/>
+      <gains D="01" I="0." P="3000." reference="LAnkSag"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="LHipSag" stiffness="300."/>
+      <gains damping="30." reference="LHipLat" stiffness="300."/>
+      <gains damping="30." reference="LHipYaw" stiffness="300."/>
+      <gains damping="30." reference="LKneeSag" stiffness="300."/>
+      <gains damping="30." reference="LAnkLat" stiffness="300."/>
+      <gains damping="30." reference="LAnkSag" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
     <disable_collisions link1="LFoot" link2="LFootmot" reason="Adjacent"/>
     <disable_collisions link1="LFoot" link2="LHipMot" reason="Never"/>
     <disable_collisions link1="LFoot" link2="LLowLeg" reason="Default"/>
@@ -82,7 +120,6 @@
     <disable_collisions link1="LFootmot" link2="RThighUpLeg" reason="Never"/>
     <disable_collisions link1="LFootmot" link2="Waist" reason="Never"/>
     <disable_collisions link1="LFootmot" link2="imu_link" reason="Never"/>
-    <disable_collisions link1="LForearm" link2="LThighUpLeg" reason="Default"/>
     <disable_collisions link1="LHipMot" link2="LLowLeg" reason="Never"/>
     <disable_collisions link1="LHipMot" link2="LThighLowLeg" reason="Never"/>
     <disable_collisions link1="LHipMot" link2="LThighUpLeg" reason="Adjacent"/>
@@ -119,7 +156,6 @@
     <disable_collisions link1="RFootmot" link2="RThighUpLeg" reason="Never"/>
     <disable_collisions link1="RFootmot" link2="Waist" reason="Never"/>
     <disable_collisions link1="RFootmot" link2="imu_link" reason="Never"/>
-    <disable_collisions link1="RForearm" link2="RThighUpLeg" reason="Default"/>
     <disable_collisions link1="RHipMot" link2="RLowLeg" reason="Never"/>
     <disable_collisions link1="RHipMot" link2="RThighLowLeg" reason="Never"/>
     <disable_collisions link1="RHipMot" link2="RThighUpLeg" reason="Adjacent"/>
