@@ -101,12 +101,12 @@
   </rtt-gazebo>
   <rtt-gazebo reference="left_hand">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="500." reference="l_handj2"/>
+      <gains D="0.1" I="0." P="1000." reference="l_handj2"/>
     </controller>
   </rtt-gazebo>
   <rtt-gazebo reference="right_hand">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="500." reference="r_handj2"/>
+      <gains D="0.1" I="0." P="1000." reference="r_handj2"/>
     </controller>
   </rtt-gazebo>
   <rtt-gazebo reference="right_arm">

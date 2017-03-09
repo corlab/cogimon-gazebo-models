@@ -1003,7 +1003,7 @@ and to define the end effectors of the robot -->
     <parent link="Waist"/>
     <child link="imu_link"/>
     <!--origin xyz="-0.072 -0.0068 0.044" rpy="0 ${PI} 0"/-->
-    <origin rpy="0 0 0" xyz="-0.072 -0.0068 0.044"/>
+    <origin rpy="1.57079632679 0 1.57079632679" xyz="-0.072 -0.0068 0.044"/>
   </joint>
   <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
