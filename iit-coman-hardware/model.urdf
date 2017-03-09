@@ -1235,7 +1235,8 @@ and to define the end effectors of the robot -->
     <child link="RSoftHandFingers"/>
     <origin rpy="0 0 0" xyz="0 0.06 0.0"/>
     <axis xyz="0 1 0"/>
-    <limit effort="50" lower="-0.05" upper="0.0" velocity="4.0"/>
+    <!--limit effort="50" lower="-0.05" upper="0.0" velocity="4.0"/-->
+    <limit effort="50" lower="0.0" upper="10.0" velocity="4.0"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="l_handj" type="fixed">
@@ -1251,7 +1252,8 @@ and to define the end effectors of the robot -->
     <child link="LSoftHandFingers"/>
     <origin rpy="0 0 0" xyz="0 -0.06 0.0"/>
     <axis xyz="0 1 0"/>
-    <limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/>
+    <!--limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/-->
+    <limit effort="50" lower="0.0" upper="10.0" velocity="4.0"/> 
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!-- Reference frames in hands -->
@@ -1331,7 +1333,7 @@ and to define the end effectors of the robot -->
     <parent link="Waist"/>
     <child link="imu_link"/>
     <!--origin xyz="-0.072 -0.0068 0.044" rpy="0 ${PI} 0"/-->
-    <origin rpy="0 0 0" xyz="-0.072 -0.0068 0.044"/>
+    <origin rpy="1.57079632679 0 1.57079632679" xyz="-0.072 -0.0068 0.044"/>
   </joint>
   <!--
   ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
