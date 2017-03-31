@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<sdf version='1.5'>
+  <model name='festo-axis'>
+    <link name='axis_link'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>56.4</mass>
+        <inertia>
+          <ixx>9.463375975</ixx>     <!-- for a box: ixx = mass / 12 * (y² + z²) = 4.7 * (1.993744 + 0.01974025) -->
+          <ixy>0.0</ixy>             <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>             <!-- for a box: ixz = 0 -->
+          <iyy>0.255380375</iyy>     <!-- for a box: iyy = mass / 12 * (x² + z²) = 4.7 * (0.034596 + 0.01974025) -->
+          <iyz>0.0</iyz>             <!-- for a box: iyz = 0 -->
+          <izz>9.533198</izz>        <!-- for a box: izz = mass / 12 * (x² + y²) = 4.7 * (0.034596 + 1.993744) -->
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose frame=''>0 -0.003 0.07125 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.186 1.412 0.1405</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://EGC-BS-KF/meshes/axis.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <link name='slide_link'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>12.6</mass>
+        <inertia>
+          <ixx>0.0845903625</ixx>    <!-- for a box: ixx = mass / 12 * (y² + z²) = 1.05 * (0.0784 + 0.00216225) -->
+          <ixy>0.0</ixy>             <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>             <!-- for a box: ixz = 0 -->
+          <iyy>0.0322594125</iyy>    <!-- for a box: iyy = mass / 12 * (x² + z²) = 1.05 * (0.028561 + 0.00216225) -->
+          <iyz>0.0</iyz>             <!-- for a box: iyz = 0 -->
+          <izz>0.11230905</izz>      <!-- for a box: izz = mass / 12 * (x² + y²) = 1.05 * (0.028561 + 0.0784) -->
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.169 0.280 0.0465</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose frame=''>0 -0.0708 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://EGC-BS-KF/meshes/slide.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <pose frame=''>0 0 0 0 0 0</pose>
+  </model>
+</sdf>
