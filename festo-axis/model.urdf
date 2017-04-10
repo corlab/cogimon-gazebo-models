@@ -15,7 +15,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://EGC-BS-KF/meshes/axis.dae" />
+                <mesh filename="model://festo-axis/meshes/axis.dae" />
             </geometry>
         </visual>
         <collision>
@@ -61,7 +61,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://EGC-BS-KF/meshes/slide.dae" scale="1 1 1" />
+                <mesh filename="model://festo-axis/meshes/slide.dae" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>

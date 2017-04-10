@@ -25,7 +25,7 @@
       <visual name='visual'>
         <geometry>
           <mesh>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/axis.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/axis.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -57,7 +57,7 @@
         <pose frame=''>0 -0.0708 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/slide.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/slide.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -84,7 +84,7 @@
         <geometry>
           <mesh>
             <scale>0.9 0.9 0.9</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_base_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_base_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -93,7 +93,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_base.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_base.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -138,7 +138,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_segment_a_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_segment_a_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -147,7 +147,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_segment_a.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_segment_a.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -206,7 +206,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_segment_b_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_segment_b_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -215,7 +215,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_segment_b.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_segment_b.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -274,7 +274,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_segment_a_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_segment_a_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -283,7 +283,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_segment_a.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_segment_a.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -342,7 +342,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_segment_b_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_segment_b_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -351,7 +351,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_segment_b.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_segment_b.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -410,7 +410,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_segment_last_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_segment_last_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -419,7 +419,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_segment_last.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_segment_last.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -478,7 +478,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/convex/arm_wrist_convex.stl</uri>
+            <uri>model://kuka-festo-8dof/meshes/convex/arm_wrist_convex.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -487,7 +487,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_wrist.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_wrist.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -546,7 +546,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_flanche.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_flanche.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -555,7 +555,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>model://kuka-lwr-4plus-8dof/meshes/arm_flanche.dae</uri>
+            <uri>model://kuka-festo-8dof/meshes/arm_flanche.dae</uri>
           </mesh>
         </geometry>
       </visual>
