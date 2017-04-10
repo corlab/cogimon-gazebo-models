@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot name="festo-axis" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <link name="world" />
+    <joint name="world_axis_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0.05" />
+        <parent link="world" />
+        <child link="axis_link" />
+    </joint>
+    <link name="axis_link">
+        <inertial>
+            <mass value="56.4" />
+            <origin rpy="0 0 0" xyz="0 -0.003 0.07125" />
+            <inertia ixx="9.463375975" ixy="0" ixz="0" iyy="0.255380375" iyz="0" izz="9.533198" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="model://festo-axis/meshes/axis.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 -0.003 0.07125" />
+            <geometry>
+                <!--box size="0.186 1.412 0.1405" /-->
+                <box size="0.196 1.422 0.1505" />
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="axis_link">
+        <!--<material value="kuka-lwr.material"/>-->
+        <selfCollide>1</selfCollide>
+    </gazebo>
+    <joint name="axis_slide_joint" type="prismatic">
+        <origin rpy="0 0 0" xyz="0 -0.5 0" />
+        <axis xyz="0 1 0" />
+        <limit effort="204" lower="-0.5" upper="0.5" velocity="1.91986217719" />
+        <!-- TODO: configure limits, safety controllers and damping
+        <safety_controller k_position="100" k_velocity="2" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335" />
+        <dynamics damping="5.0" />
+         -->
+        <parent link="axis_link" />
+        <child link="slide_link" />
+    </joint>
+    <gazebo reference="axis_slide_joint">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <link name="slide_link">
+        <inertial>
+            <mass value="12.6" />
+            <origin rpy="0 0 0" xyz="-0.0075 0.5226 0.14925" />
+            <!-- inertia for a box:
+                ixx = mass / 12 * (y² + z²)
+                ixy = 0
+                ixz = 0
+                iyy = mass / 12 * (x² + z²)
+                iyz = 0
+                izz = mass / 12 * (x² + y²) -->
+            <inertia ixx="0.0845903625" ixy="0" ixz="0" iyy="0.0322594125" iyz="0" izz="0.11230905" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="model://festo-axis/meshes/slide.dae" scale="1 1 1" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.0075 0.5226 0.14925" />
+            <geometry>
+                <!--box size="0.169 0.280 0.0465"/-->
+                <box size="0.179 0.290 0.0565"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="slide_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</robot>
