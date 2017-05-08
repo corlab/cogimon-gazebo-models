@@ -64,6 +64,18 @@
 # 1/2 (true/false) 
 #
 -->
+  <!--
+####################################################
+##
+##  USE GRASPFIX (IN ROS)
+####################################################
+-->
+  <!--
+####################################################
+##
+##  USE ROS for IMU
+####################################################
+-->
   <!-- ***********  MODEL COLORS *********** -->
   <material name="grey">
     <color rgba="0.5 0.5 0.5 1"/>
@@ -1235,8 +1247,7 @@ and to define the end effectors of the robot -->
     <child link="RSoftHandFingers"/>
     <origin rpy="0 0 0" xyz="0 0.06 0.0"/>
     <axis xyz="0 -1 0"/>
-    <!--limit effort="50" lower="-0.05" upper="0.0" velocity="4.0"/-->
-    <limit effort="50" lower="0.0" upper="10.0" velocity="4.0"/>
+    <limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="l_handj" type="fixed">
@@ -1252,8 +1263,7 @@ and to define the end effectors of the robot -->
     <child link="LSoftHandFingers"/>
     <origin rpy="0 0 0" xyz="0 -0.06 0.0"/>
     <axis xyz="0 1 0"/>
-    <!--limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/-->
-    <limit effort="50" lower="0.0" upper="10.0" velocity="4.0"/> 
+    <limit effort="50" lower="0.0" upper="0.05" velocity="4.0"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!-- Reference frames in hands -->
@@ -1343,32 +1353,18 @@ and to define the end effectors of the robot -->
   This file groups files to use COMAN in GAZEBO
   
   -->
-  <gazebo reference="imu_link">
-    <sensor name="imu_sensor" type="imu">
-      <always_on>1</always_on>
-      <update_rate>1000</update_rate>
-      <visualize>true</visualize>
-      <topic>__default_topic__</topic>
-      <imu>
-        <!--
-          <noise>
-           <type>gaussian</type>
-            <rate>
-             <mean>0.0</mean>
-             <stddev>2e-4</stddev>
-             <bias_mean>0.0000075</bias_mean>
-             <bias_stddev>0.0000008</bias_stddev>
-            </rate>
-            <accel>
-             <mean>0.0</mean>
-             <stddev>1.7e-2</stddev>
-             <bias_mean>0.1</bias_mean>
-             <bias_stddev>0.001</bias_stddev>
-            </accel>
-          </noise>
-          -->
-      </imu>
-    </sensor>
+  <gazebo>
+    <plugin filename="libgazebo_ros_imu.so" name="imu_plugin">
+      <!-- For now we use this...to change with the commented one in future-->
+      <!--plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so"-->
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>20.0</updateRate>
+    </plugin>
   </gazebo>
   <!-- contact model for foot surface -->
   <gazebo reference="LFoot">
@@ -1514,6 +1510,7 @@ and to define the end effectors of the robot -->
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
+  <!-- YARP PLUGINS for GAZEBO SIMULATION -->
   <gazebo reference="RForearmPlate">
     <sensor name="right_arm" type="force_torque">
       <force_torque>
