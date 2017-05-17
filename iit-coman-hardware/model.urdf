@@ -123,13 +123,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="Waist_visual">
-        <mesh filename="package://coman_urdf/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <geometry name="Waist_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -154,13 +154,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <material name="dark_grey"/>
       <geometry name="DWL_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <geometry name="DWL_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Torso1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -174,13 +174,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <material name="dark_grey"/>
       <geometry name="DWS_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0 -0.63912053"/>
       <geometry name="DWS_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Torso2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -194,13 +194,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0.0 -0.68662053"/>
       <material name="red"/>
       <geometry name="DWYTorso_visual">
-        <mesh filename="package://coman_urdf/meshes/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.020281504 0.0 -0.68662053"/>
       <geometry name="DWYTorso_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Torso3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -260,13 +260,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -280,13 +280,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RThighUpLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <geometry name="RThighUpLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -300,13 +300,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="RThighLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <geometry name="RThighLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -320,13 +320,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -340,13 +340,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="RFootmot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <geometry name="RFootmot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -381,13 +381,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -401,13 +401,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="LThighUpLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <geometry name="LThighUpLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -421,13 +421,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="LThighLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <geometry name="LThighLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -441,13 +441,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="LLowLeg_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <geometry name="LLowLeg_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -461,13 +461,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="LFootmot_visual">
-        <mesh filename="package://coman_urdf/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <geometry name="LFootmot_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -693,13 +693,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.0825 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="RShp_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.0825 -0.844329"/>
       <geometry name="RShp_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -713,13 +713,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="RShr_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.844329"/>
       <geometry name="RShr_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -733,13 +733,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.79952053"/>
       <material name="dark_grey"/>
       <geometry name="RShy_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 0.1558 -0.79952053"/>
       <geometry name="RShy_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -753,13 +753,13 @@ and to define the end effectors of the robot -->
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="RElb_visual">
-        <mesh filename="package://coman_urdf/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <geometry name="RElb_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -774,13 +774,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.0825 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="LShp_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.0825 -0.844329"/>
       <geometry name="LShp_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -794,13 +794,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.844329"/>
       <material name="dark_grey"/>
       <geometry name="LShr_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.844329"/>
       <geometry name="LShr_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -814,13 +814,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.79952053"/>
       <material name="dark_grey"/>
       <geometry name="LShy_visual">
-        <mesh filename="package://coman_urdf/meshes/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="-0.005305 -0.1558 -0.79952053"/>
       <geometry name="LShy_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Arm2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -834,13 +834,13 @@ and to define the end effectors of the robot -->
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="LElb_visual">
-        <mesh filename="package://coman_urdf/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="-1.570796326795 1.570796326795 0" xyz="0 0 0"/>
       <geometry name="LElb_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Elbow.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -936,13 +936,13 @@ and to define the end effectors of the robot -->
       <origin rpy="3.14159265359 0 1.570796326795" xyz="0 0 0.0718"/>
       <material name="dark_grey"/>
       <geometry name="LForearm_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm0.STL" scale="0.1 0.1 0.1"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm0.STL" scale="0.1 0.1 0.1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0 0 0.0718"/>
       <geometry name="LForearm_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm0.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm0.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -958,13 +958,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 1.570796326795 3.14159265359" xyz="0.025 0 0"/>
       <material name="grey"/>
       <geometry name="LWrMot2_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm1.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm1.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 1.570796326795 3.14159265359" xyz="0.025 0 0"/>
       <geometry name="LWrMot2_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm1.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm1.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -980,13 +980,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0.025 -0.012 -0.02"/>
       <material name="grey"/>
       <geometry name="LWrMot3_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0.025 -0.012 -0.02"/>
       <geometry name="LWrMot3_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1003,13 +1003,13 @@ and to define the end effectors of the robot -->
       <origin rpy="3.14159265359 0 1.570796326795" xyz="0 0 0.0718"/>
       <material name="dark_grey"/>
       <geometry name="RForearm_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm0.STL" scale="0.1 0.1 0.1"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm0.STL" scale="0.1 0.1 0.1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0 0 0.0718"/>
       <geometry name="RForearm_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm0.STL" scale="1.0 1.0 1.0"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm0.STL" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>
@@ -1025,13 +1025,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 1.570796326795 3.14159265359" xyz="0.025 0 0"/>
       <material name="grey"/>
       <geometry name="RWrMot2_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm1.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm1.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 1.570796326795 3.14159265359" xyz="0.025 0 0"/>
       <geometry name="RWrMot2_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm1.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm1.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1047,13 +1047,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0.025 -0.012 -0.02"/>
       <material name="grey"/>
       <geometry name="RWrMot3_visual">
-        <mesh filename="package://coman_urdf/meshes/Forearm2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/Forearm2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 3.14159265359 1.570796326795" xyz="0.025 -0.012 -0.02"/>
       <geometry name="RWrMot3_collision">
-        <mesh filename="package://coman_urdf/meshes/simple/Forearm2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-coman-hardware/meshes/simple/Forearm2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
