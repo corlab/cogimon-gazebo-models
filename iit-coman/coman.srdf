@@ -81,9 +81,9 @@
   </group>
   <rtt-gazebo reference="torso">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="1000." reference="WaistLat"/>
-      <gains D="0.1" I="0." P="1000." reference="WaistSag"/>
-      <gains D="0.1" I="0." P="1000." reference="WaistYaw"/>
+      <gains D="1." I="0." P="600." reference="WaistLat"/>
+      <gains D="1." I="0." P="600." reference="WaistSag"/>
+      <gains D="1." I="0." P="600." reference="WaistYaw"/>
     </controller>
     <controller type="JointImpedanceCtrl">
       <gains damping="30." reference="WaistLat" stiffness="300."/>
@@ -94,13 +94,13 @@
   </rtt-gazebo>
   <rtt-gazebo reference="right_arm">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="1000." reference="RShSag"/>
-      <gains D="0.1" I="0." P="1000." reference="RShLat"/>
-      <gains D="0.1" I="0." P="600." reference="RShYaw"/>
-      <gains D="0.1" I="0." P="1000." reference="RElbj"/>
-      <gains D="0.1" I="0." P="100." reference="RForearmPlate"/>
-      <gains D="0.1" I="0." P="100." reference="RWrj1"/>
-      <gains D="0.01" I="0." P="10." reference="RWrj2"/>
+      <gains D="1." I="0." P="600." reference="RShSag"/>
+      <gains D="1." I="0." P="600." reference="RShLat"/>
+      <gains D="1." I="0." P="600." reference="RShYaw"/>
+      <gains D="1." I="0." P="600." reference="RElbj"/>
+      <gains D="1." I="0." P="100." reference="RForearmPlate"/>
+      <gains D="1." I="0." P="100." reference="RWrj1"/>
+      <gains D="0.1" I="0." P="10." reference="RWrj2"/>
     </controller>
     <controller type="JointImpedanceCtrl">
       <gains damping="30." reference="RShSag" stiffness="300."/>
@@ -115,13 +115,13 @@
   </rtt-gazebo>
   <rtt-gazebo reference="left_arm">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="1000." reference="LShSag"/>
-      <gains D="0.1" I="0." P="1000." reference="LShLat"/>
-      <gains D="0.1" I="0." P="600." reference="LShYaw"/>
-      <gains D="0.1" I="0." P="1000." reference="LElbj"/>
-      <gains D="0.1" I="0." P="100." reference="LForearmPlate"/>
-      <gains D="0.1" I="0." P="100." reference="LWrj1"/>
-      <gains D="0.01" I="0." P="10." reference="LWrj2"/>
+      <gains D="1." I="0." P="600." reference="LShSag"/>
+      <gains D="1." I="0." P="600." reference="LShLat"/>
+      <gains D="1." I="0." P="600." reference="LShYaw"/>
+      <gains D="1." I="0." P="600." reference="LElbj"/>
+      <gains D="1." I="0." P="100." reference="LForearmPlate"/>
+      <gains D="1." I="0." P="100." reference="LWrj1"/>
+      <gains D="0.1" I="0." P="10." reference="LWrj2"/>
     </controller>
     <controller type="JointImpedanceCtrl">
       <gains damping="30." reference="LShSag" stiffness="300."/>
