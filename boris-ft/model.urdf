@@ -537,8 +537,8 @@
 				</geometry>
 			</visual>
 			<inertial>
-       <mass value="0.255"/>
-       <inertia ixx="0.000110838" ixy="0.0" ixz="0.0" iyy="0.000110838" iyz="0.0" izz="0.000174548"/>
+       <mass value="0.1"/>
+       <inertia ixx="0.19666" ixy="0.0" ixz="0.0" iyy="0.105588" iyz="0.0" izz="0.23704"/>
      </inertial>
 			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
 			<sensor type='force_torque' name='ft_sensor_left'>"0.037"
