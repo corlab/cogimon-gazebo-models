@@ -1,4 +1,4 @@
-<robot name="kuka-lwr" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="kuka-lwr-4plus-tool" xmlns:xacro="http://ros.org/wiki/xacro">
   <!--virtual_joint child_link="base_link" name="virtual_joint" parent_frame="world" type="floating"/-->
 
   <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->

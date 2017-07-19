@@ -1,5 +1,4 @@
-<?xml version="1.0" ?>
-<robot name="kuka-lwr-4plus-tool" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="kuka-lwr" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <material name="DarkGrey">
         <color rgba="0.3 0.3 0.3 1.0" />
     </material>
@@ -67,14 +66,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_base.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_base.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0.01" />
+            <origin rpy="0 0 0" xyz="0 0 0.055" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_base_convex.stl" scale="0.9 0.9 0.9" />
+                <cylinder length="0.11" radius="0.09"/>
             </geometry>
         </collision>
     </link>
@@ -108,14 +107,14 @@
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_segment_a.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_segment_a.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
+            <origin rpy="-0.3 0 0" xyz="0 0.026 0.130" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_segment_a_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.30" radius="0.08"/>
             </geometry>
         </collision>
     </link>
@@ -149,14 +148,14 @@
         <visual>
             <origin rpy="3.14159265359 0 3.14159265359" xyz="0 0 0.2" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_segment_b.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_segment_b.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="3.14159265359 0 3.14159265359" xyz="0 0 0.2" />
+            <origin rpy="-0.3 0 0" xyz="0 -0.026 0.08" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_segment_b_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.30" radius="0.08"/>
             </geometry>
         </collision>
     </link>
@@ -190,14 +189,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_segment_a.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_segment_a.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0" />
+            <origin rpy="0.3 0 0" xyz="0 -0.026 0.13" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_segment_a_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.30" radius="0.08"/>
             </geometry>
         </collision>
     </link>
@@ -231,14 +230,14 @@
         <visual>
             <origin rpy="0 3.14159265359 3.14159265359" xyz="0 0 0.2" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_segment_b.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_segment_b.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="0 3.14159265359 3.14159265359" xyz="0 0 0.2" />
+            <origin rpy="0.3 0 0" xyz="0 0.026 0.08" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_segment_b_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.30" radius="0.08"/>
             </geometry>
         </collision>
     </link>
@@ -272,14 +271,14 @@
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry name="lwr_arm_5_geom">
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_segment_last.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_segment_last.dae" scale="100 100 100" />
             </geometry>
             <material name="Orange" />
         </visual>
         <collision>
-            <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
+            <origin rpy="-0.18 0 0" xyz="0 0.021 0.125" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_segment_last_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.263" radius="0.07"/>
             </geometry>
         </collision>
     </link>
@@ -313,14 +312,14 @@
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_wrist.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_wrist.dae" scale="100 100 100" />
             </geometry>
             <material name="Grey" />
         </visual>
         <collision>
-            <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
+            <origin rpy="0 0 0" xyz="0 -0.005 -0.0052" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/convex/arm_wrist_convex.stl" scale="1.0 1.0 1.0" />
+                <cylinder length="0.132" radius="0.075"/>
             </geometry>
         </collision>
     </link>
@@ -335,13 +334,11 @@
         <dynamics damping="1.0" />
         <parent link="lwr_arm_6_link" />
         <child link="lwr_arm_7_link" />
-
     </joint>
     <gazebo reference="lwr_arm_6_joint">
         <provideFeedback>1</provideFeedback>
-        <implicitSpringDamper>1</implicitSpringDamper>
+       <!-- <implicitSpringDamper>1</implicitSpringDamper>-->
     </gazebo>
-
     <transmission name="lwr_arm_6_trans" type="SimpleTransmission">
         <actuator name="lwr_arm_6_motor" />
         <joint name="lwr_arm_6_joint" />
@@ -356,73 +353,28 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_flanche.dae" scale="100 100 100" />
+                <mesh filename="model://kuka-lwr-4plus/meshes/arm_flanche.dae" scale="100 100 100" />
             </geometry>
             <material name="Grey" />
         </visual>
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 0" xyz="0 0 -0.015" />
             <geometry>
-                <!--mesh filename="model://kuka-lwr-4plus/meshes/convex/arm_flanche_convex.stl" scale="1.0 1.0 1.0"/-->
-               <mesh filename="model://kuka-lwr-4plus-ft/meshes/arm_flanche.dae" scale="100 100 100" />
+                <cylinder length="0.035" radius="0.05"/>
             </geometry>
             <surface>
                 <friction>
                     <ode>
-                        <mu>0.01</mu>
-                        <mu2>0.01</mu2>
+                        <mu>0.0</mu>
+                        <mu2>0.0</mu2>
                     </ode>
                 </friction>
             </surface>
         </collision>
     </link>
     <gazebo reference="lwr_arm_7_link">
-      <!--  <material value="kuka-lwr.material"/>-->
+        <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="lwr_ft_sensor_joint" type="fixed">
-	<origin rpy="0 0 0" xyz="0 0 0.1" />
-	<limit effort="0" lower="0" upper="0" velocity="0" />
-    <parent link="lwr_arm_7_link"/>
-    <child link="lwr_tool"/>
-	
-  </joint>
-<gazebo reference="lwr_ft_sensor_joint">
-        <provideFeedback>1</provideFeedback>
-        <sensor name="force_torque" type="force_torque">
-          <always_on>true</always_on>
-          <visualize>true</visualize>
-          <update_rate>100</update_rate>
-		   <force_torque>
-			<frame>child</frame>
-			<measure_direction>child_to_parent</measure_direction>
-		  </force_torque>
-        </sensor>
-    </gazebo>
-
-
-<link name="lwr_tool">
-			<collision name="ft_collision">
-				<origin rpy="0 0 0" xyz="0 0 0" />
-				<geometry>
-				 <box size="0.2 0.2 0.2"/>
-				</geometry>
-			</collision>
-			<visual name="ft_visual">
-				<origin rpy="0 0 0" xyz="0 0 0" />
-				<geometry>
-				 <box size="0.2 0.2 0.2"/>
-				</geometry>
-			</visual>
-			<inertial>
-			  <origin rpy="0 0 0" xyz="0 0 0" />
-			  <mass value="0.1"/>
-			  <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
-			</inertial>
-		</link> 
-   <gazebo reference="lwr_tool_mount">
-		<provideFeedback>1</provideFeedback>
-		<!--
-        <material value="kuka-lwr.material"/>-->
-    </gazebo>
-    <!--xacro:lwr_arm_gazebo_controller namespace="" prefix="lwr" port="49938"/-->
+    
+    <origin xyz="0 0 0" rpy="0 0 0" />
 </robot>
