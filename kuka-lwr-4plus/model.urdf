@@ -337,7 +337,7 @@
     </joint>
     <gazebo reference="lwr_arm_6_joint">
         <provideFeedback>1</provideFeedback>
-       <!-- <implicitSpringDamper>1</implicitSpringDamper>-->
+        <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
     <transmission name="lwr_arm_6_trans" type="SimpleTransmission">
         <actuator name="lwr_arm_6_motor" />
@@ -376,6 +376,11 @@
     <gazebo reference="lwr_arm_7_link">
         <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
-    
+    <!--joint name="lwr_arm_hand_fixed_joint" type="fixed">
+    <parent link="lwr_arm_7_link"/>
+    <child link="lwr_tool_mount"/>
+  </joint>
+  <link name="lwr_tool_mount"/-->
+    <!--xacro:lwr_arm_gazebo_controller namespace="" prefix="lwr" port="49938"/-->
     <origin xyz="0 0 0" rpy="0 0 0" />
 </robot>
