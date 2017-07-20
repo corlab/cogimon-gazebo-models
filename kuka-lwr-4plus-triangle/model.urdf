@@ -1,4 +1,4 @@
-<robot name="kuka-lwr-4plus-sponge" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="kuka-lwr-4plus-triangle" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <material name="DarkGrey">
         <color rgba="0.3 0.3 0.3 1.0" />
     </material>
@@ -376,52 +376,13 @@
     <gazebo reference="lwr_arm_7_link">
         <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="lwr_arm_ft_sensor_joint" type="fixed">
-	<origin rpy="0 0 0" xyz="0 0 0.0333" />
-	<limit effort="0" lower="0" upper="0" velocity="0" />
-    <parent link="lwr_arm_7_link"/>
-    <child link="lwr_ft_link"/>
-</joint>
-<gazebo reference="lwr_arm_ft_sensor_joint">
-        <provideFeedback>1</provideFeedback>
-</gazebo>
-
-
-<link name="lwr_ft_link">
-			<collision name="ft_collision">
-				<origin rpy="0 0 0" xyz="0 0 -0.01665" />
-				<geometry>
-					<cylinder length="0.0333" radius="0.037"/>
-				</geometry>
-			</collision>
-			<visual name="ft_visual">
-				<origin rpy="0 0 0" xyz="0 0 -0.01665" />
-				<geometry>
-					<cylinder length="0.0333" radius="0.037"/>
-				</geometry>
-			</visual>
-			<inertial>
-       <mass value="0.255"/>
-       <inertia ixx="0.000110838" ixy="0.0" ixz="0.0" iyy="0.000110838" iyz="0.0" izz="0.000174548"/>
-     </inertial>
-			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
-			<sensor type='force_torque' name='ft_sensor'>"0.037"
-				<update_rate>1000</update_rate>
-			</sensor>-->
-		</link> 
-   <gazebo reference="lwr_ft_link">
-		<provideFeedback>1</provideFeedback>
-		<!--<sensor type="force_torque" name="ft1"/>
-        <material value="kuka-lwr.material"/>-->
-    </gazebo>
-
-<joint name="lwr_ft_sensor_tool_joint" type="fixed">
+<joint name="lwr_arm_7_tool_joint" type="fixed">
 	<origin rpy="0 0 0" xyz="0 0 0.045" />
 	<limit effort="0" lower="0" upper="0" velocity="0" />
-    <parent link="lwr_ft_link"/>
+    <parent link="lwr_arm_7_link"/>
     <child link="lwr_tool_link"/>
 </joint>
-<gazebo reference="lwr_ft_sensor_tool_joint">
+<gazebo reference="lwr_arm_7_tool_joint">
 <provideFeedback>1</provideFeedback>
 <!--<sensor name="force_torque" type="force_torque">
           <always_on>true</always_on>
@@ -441,7 +402,7 @@
 <!--
 					<mesh filename="model://kuka-lwr-4plus-sponge/NewKukaFoot.stl" scale="1.7 1.3 1" />
 -->
-					<mesh filename="model://kuka-lwr-4plus-triangle/TriangleFoot.stl" scale="1.0 1.0 1" />
+					<mesh filename="model://kuka-lwr-4plus-triangle/TriangleFoot.stl" scale="0.01 0.01 0.01" />
 				</geometry>
             <surface>
                 <friction>
@@ -458,12 +419,12 @@
 <!--
 					<mesh filename="model://boris-ft/meshes/boris-foot-white.stl" scale="1.7 1.3 1" />
 -->
-					<mesh filename="model://kuka-lwr-4plus-triangle/TriangleFoot.stl" scale="1 1 1" />
+					<mesh filename="model://kuka-lwr-4plus-triangle/TriangleFoot.stl" scale="0.01 0.01 0.01" />
 				</geometry>
 			</visual>
 			<inertial>
-       <mass value="0.691"/>
-<origin xyz="0 0 0.064368" />
+       <mass value="0.355"/>
+<origin xyz="0 0 0.02" />
        <inertia ixx="0.000001532" ixy="0.0" ixz="0.0" iyy="0.000002344" iyz="0.0" izz="0.000001532"/>
      </inertial>
 			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
@@ -471,5 +432,7 @@
 				<update_rate>1000</update_rate>
 			</sensor>-->
 </link> 
-
+<gazebo reference="lwr_tool_link">
+        <!--<material value="kuka-lwr.material"/>-->
+    </gazebo>
 </robot>
