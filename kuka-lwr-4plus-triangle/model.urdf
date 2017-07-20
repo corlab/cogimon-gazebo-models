@@ -424,8 +424,8 @@
 			</visual>
 			<inertial>
        <mass value="0.355"/>
-<origin xyz="0 0 0.02" />
-       <inertia ixx="0.000001532" ixy="0.0" ixz="0.0" iyy="0.000002344" iyz="0.0" izz="0.000001532"/>
+<origin xyz="0 -0.000511 0.017079" />
+       <inertia ixx="0.0003608" ixy="0.0" ixz="0.0" iyy="0.0003456" iyz="0.0000021" izz="0.0005754"/>
      </inertial>
 			<!--<sensor name='ft_sensor' type='ForceTorque'/><- maybe?
 			<sensor type='force_torque' name='ft_sensor'>"0.037"
