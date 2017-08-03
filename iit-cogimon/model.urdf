@@ -242,7 +242,7 @@ and to define the end effectors of the robot -->
     <child link="LHipMot"/>
     <origin rpy="0 0 0" xyz="0.01545 0.112 -0.05"/>
     <axis xyz="1 0 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="235" lower="-0.523598775597" upper="1.65806278939" velocity="7.4"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="LHipSag" type="revolute">
@@ -250,7 +250,7 @@ and to define the end effectors of the robot -->
     <child link="LThighUpLeg"/>
     <origin rpy="0 0 0" xyz="-0.059 0.07865 -0.1185"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="235" lower="-1.91986217719" upper="1.55334303427" velocity="7.4"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="LHipYaw" type="revolute">
@@ -258,7 +258,7 @@ and to define the end effectors of the robot -->
     <child link="LThighLowLeg"/>
     <origin rpy="0 0 0" xyz="0.0 -0.09 -0.25645"/>
     <axis xyz="0 0 1"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="153" lower="-0.558505360637" upper="1.57079632679" velocity="4.6"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="LKneePitch" type="revolute">
@@ -266,15 +266,16 @@ and to define the end effectors of the robot -->
     <child link="LLowLeg"/>
     <origin rpy="0 0 0" xyz="-0.039 0.0641 -0.0607"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="313" lower="0.0" upper="2.44346095279" velocity="5.5"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
+  <!-- Here we do an assumption: Ankle Pitch can go -50/+40 while Ankle Roll -15/+15-->
   <joint name="LAnklePitch" type="revolute">
     <parent link="LLowLeg"/>
     <child link="LFootmot"/>
     <origin rpy="0 0 0" xyz="0.039 -0.0616 -0.425294"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="179" lower="-0.872664625995" upper="0.698131700796" velocity="4.9"/>
     <dynamics damping="0.1" friction="0"/>
   </joint>
   <joint name="LAnkleRoll" type="revolute">
@@ -282,7 +283,7 @@ and to define the end effectors of the robot -->
     <child link="LFoot"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="230" lower="-0.261799387798" upper="0.261799387798" velocity="3.2"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!-- LINKS -->
@@ -412,7 +413,7 @@ and to define the end effectors of the robot -->
     <child link="RHipMot"/>
     <origin rpy="0 0 0" xyz="0.01545 -0.112 -0.05"/>
     <axis xyz="1 0 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="235" lower="-1.65806278939" upper="0.523598775597" velocity="7.4"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="RHipSag" type="revolute">
@@ -420,7 +421,7 @@ and to define the end effectors of the robot -->
     <child link="RThighUpLeg"/>
     <origin rpy="0 0 0" xyz="-0.059 -0.07865 -0.1185"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="235" lower="-1.91986217719" upper="1.55334303427" velocity="7.4"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="RHipYaw" type="revolute">
@@ -428,7 +429,7 @@ and to define the end effectors of the robot -->
     <child link="RThighLowLeg"/>
     <origin rpy="0 0 0" xyz="0.0 0.09 -0.25645"/>
     <axis xyz="0 0 1"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="153" lower="-1.57079632679" upper="0.558505360637" velocity="4.9"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <joint name="RKneePitch" type="revolute">
@@ -436,15 +437,16 @@ and to define the end effectors of the robot -->
     <child link="RLowLeg"/>
     <origin rpy="0 0 0" xyz="-0.039 -0.0641 -0.0607"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="313" lower="0.0" upper="2.44346095279" velocity="5.5"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
+  <!-- Here we do an assumption: Ankle Pitch can go -50/+40 while Ankle Roll -15/+15-->
   <joint name="RAnklePitch" type="revolute">
     <parent link="RLowLeg"/>
     <child link="RFootmot"/>
     <origin rpy="0 0 0" xyz="0.039 0.0616 -0.425294"/>
     <axis xyz="0 1 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="179" lower="-0.872664625995" upper="0.698131700796" velocity="4.9"/>
     <dynamics damping="0.1" friction="0"/>
   </joint>
   <joint name="RAnkleRoll" type="revolute">
@@ -452,7 +454,7 @@ and to define the end effectors of the robot -->
     <child link="RFoot"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit effort="176" lower="-1.57079632679" upper="1.57079632679" velocity="3.67"/>
+    <limit effort="230" lower="-0.261799387798" upper="0.261799387798" velocity="3.2"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!--
@@ -495,59 +497,103 @@ and to define the end effectors of the robot -->
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/foot_reference_frame.urdf.xacro" /-->
   <!-- ********************ARMS******************** -->
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/arms.urdf.xacro" /-->
-  <!-- ************ FOREARMS ************ -->
-  <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
-and to define the end effectors of the robot -->
-  <!-- position and orientation of the arm regardless of the tool (grasping device for instance) attached to it -->
-  <!--link name="l_wrist"/>
-<link name="r_wrist"/>
-
-
-<xacro:if value="${GAZEBO_COGIMON_USES_FOREARMS}">
-    <xacro:include filename="$(find cogimon_urdf)/urdf/parts/forearms.urdf.xacro" />
-
-    <link name="l_arm_ft"/>
-    <link name="r_arm_ft"/>
-
-    <joint name="l_arm_ft_joint" type="fixed">
-      <parent link="LForearm"/>
-      <child link="l_arm_ft"/>
-      <origin xyz="0 0 0" rpy="0 0 0" /> 
-    </joint>
-
-    <joint name="r_arm_ft_joint" type="fixed">
-      <parent link="RForearm"/>
-      <child link="r_arm_ft"/>
-      <origin xyz="0 0 0" rpy="0 0 0" /> 
-    </joint>
-</xacro:if>
-<xacro:unless value="${GAZEBO_COGIMON_USES_FOREARMS}">
-    <xacro:include filename="$(find cogimon_urdf)/urdf/parts/no_forearms.urdf.xacro" />
-</xacro:unless>
-
-
-    <link name="l_leg_ft"/>
-    <link name="r_leg_ft"/>
-
-    <joint name="l_leg_ft_joint" type="fixed">
-      <parent link="LFoot"/>
-      <child link="l_leg_ft"/>
-      <origin xyz="0 0 -0.065" rpy="0 0 0" /> 
-    </joint>
-
-    <joint name="r_leg_ft_joint" type="fixed">
-      <parent link="RFoot"/>
-      <child link="r_leg_ft"/>
-      <origin xyz="0 0 -0.065" rpy="0 0 0" /> 
-    </joint-->
-  <!-- ************ HANDS ************ -->
-  <!--xacro:if value="${GAZEBO_COGIMON_USES_FOREARMS}">
-    <xacro:include filename="$(find cogimon_urdf)/urdf/parts/soft_hand.urdf.xacro" /-->
-  <!-- Reference frames in hands -->
-  <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/hand_reference_frame.urdf.xacro" />	
-</xacro:if-->
-  <!-- IMU -->
-  <!--xacro:include filename="$(find cogimon_urdf)/urdf/sensors/imu.urdf.xacro"/-->
+  <!-- ************ REF FRAMES **************** -->
+  <link name="l_ankle"/>
+  <link name="l_sole"/>
+  <link name="l_toe"/>
+  <link name="l_heel"/>
+  <joint name="l_ankle_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="LFoot"/>
+    <child link="l_ankle"/>
+  </joint>
+  <joint name="l_sole_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.054"/>
+    <parent link="l_ankle"/>
+    <child link="l_sole"/>
+  </joint>
+  <joint name="l_toe_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 0 0"/>
+    <parent link="l_sole"/>
+    <child link="l_toe"/>
+  </joint>
+  <joint name="l_heel_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 0 0"/>
+    <parent link="l_sole"/>
+    <child link="l_heel"/>
+  </joint>
+  <link name="l_foot_upper_right_link"/>
+  <joint name="l_foot_upper_right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 -0.055 0"/>
+    <parent link="l_sole"/>
+    <child link="l_foot_upper_right_link"/>
+  </joint>
+  <link name="l_foot_upper_left_link"/>
+  <joint name="l_foot_upper_left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 0.055 0"/>
+    <parent link="l_sole"/>
+    <child link="l_foot_upper_left_link"/>
+  </joint>
+  <link name="l_foot_lower_right_link"/>
+  <joint name="l_foot_lower_right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 -0.055 0"/>
+    <parent link="l_sole"/>
+    <child link="l_foot_lower_right_link"/>
+  </joint>
+  <link name="l_foot_lower_left_link"/>
+  <joint name="l_foot_lower_left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 0.055 0"/>
+    <parent link="l_sole"/>
+    <child link="l_foot_lower_left_link"/>
+  </joint>
+  <link name="r_ankle"/>
+  <link name="r_sole"/>
+  <link name="r_toe"/>
+  <link name="r_heel"/>
+  <joint name="r_ankle_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="RFoot"/>
+    <child link="r_ankle"/>
+  </joint>
+  <joint name="r_sole_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.054"/>
+    <parent link="r_ankle"/>
+    <child link="r_sole"/>
+  </joint>
+  <joint name="r_toe_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 0 0"/>
+    <parent link="r_sole"/>
+    <child link="r_toe"/>
+  </joint>
+  <joint name="r_heel_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 0 0"/>
+    <parent link="r_sole"/>
+    <child link="r_heel"/>
+  </joint>
+  <link name="r_foot_upper_right_link"/>
+  <joint name="r_foot_upper_right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 -0.055 0"/>
+    <parent link="r_sole"/>
+    <child link="r_foot_upper_right_link"/>
+  </joint>
+  <link name="r_foot_upper_left_link"/>
+  <joint name="r_foot_upper_left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.107 0.055 0"/>
+    <parent link="r_sole"/>
+    <child link="r_foot_upper_left_link"/>
+  </joint>
+  <link name="r_foot_lower_right_link"/>
+  <joint name="r_foot_lower_right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 -0.055 0"/>
+    <parent link="r_sole"/>
+    <child link="r_foot_lower_right_link"/>
+  </joint>
+  <link name="r_foot_lower_left_link"/>
+  <joint name="r_foot_lower_left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1035 0.055 0"/>
+    <parent link="r_sole"/>
+    <child link="r_foot_lower_left_link"/>
+  </joint>
   <!-- contact model for foot surface -->
   <gazebo reference="LFoot">
     <kp>1000000.0</kp>
