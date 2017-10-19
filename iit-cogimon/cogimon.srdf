@@ -10,6 +10,13 @@
 <robot name="cogimon" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- ************SELECT PARTS*************-->
   <!-- *************************************-->
+  <!-- ************COGIMON_PENNACCHIO*******-->
+  <!--
+     This will add a fake torso link after the first
+     torso joint (roll). If this is true, arms has
+     to be false and torso has to be true.
+-->
+  <!-- *************************************-->
   <!-- ************FLOATING BASE*************-->
   <!-- ******************************************-->
   <!-- ************FIXED BASE*************-->
@@ -31,14 +38,19 @@
   <group name="right_leg">
     <chain base_link="Waist" tip_link="RFoot"/>
   </group>
+  <group name="torso">
+    <chain base_link="Waist" tip_link="DWL"/>
+  </group>
   <group name="legs">
     <group name="left_leg"/>
     <group name="right_leg"/>
+    <group name="torso"/>
   </group>
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
     <group name="left_leg"/>
     <group name="right_leg"/>
+    <group name="torso"/>
   </group>
   <rtt-gazebo reference="right_leg">
     <controller type="JointPositionCtrl">
@@ -78,6 +90,15 @@
     </controller>
     <controller type="JointTorqueCtrl"/>
   </rtt-gazebo>
+  <rtt-gazebo reference="torso">
+    <controller type="JointPositionCtrl">
+      <gains D="5.0" I="0." P="2500." reference="WaistLat"/>
+    </controller>
+    <controller type="JointImpedanceCtrl">
+      <gains damping="30." reference="WaistLat" stiffness="300."/>
+    </controller>
+    <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
   <group_state group="chains" name="home">
     <joint name="LHipLat" value="0.0"/>
     <joint name="LHipSag" value="0.0"/>
@@ -91,5 +112,7 @@
     <joint name="RKneePitch" value="0.0"/>
     <joint name="RAnklePitch" value="0.0"/>
     <joint name="RAnkleRoll" value="0.0"/>
+    <joint name="WaistLat" value="0.0"/>
   </group_state>
 </robot>
+
