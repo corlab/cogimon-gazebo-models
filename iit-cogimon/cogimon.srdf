@@ -92,7 +92,7 @@
   </rtt-gazebo>
   <rtt-gazebo reference="torso">
     <controller type="JointPositionCtrl">
-      <gains D="5.0" I="0." P="2500." reference="WaistLat"/>
+      <gains D="12.0" I="0." P="7500." reference="WaistLat"/>
     </controller>
     <controller type="JointImpedanceCtrl">
       <gains damping="30." reference="WaistLat" stiffness="300."/>
