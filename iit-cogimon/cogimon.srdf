@@ -15,6 +15,9 @@
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
   </group>
+  <group name="imu_sensors">
+    <link name="imu_link"/>
+  </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="LFoot"/>
   </group>
