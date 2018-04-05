@@ -11,7 +11,13 @@
   <group name="base">
     <link name="Waist"/>
   </group>
+  <group name="hands">
+    <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/>
+  </group>
   <group name="force_torque_sensors">
+    <joint name="l_arm_ft_joint"/>
+    <joint name="r_arm_ft_joint"/>
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
   </group>
@@ -33,12 +39,16 @@
   <group name="right_arm">
     <chain base_link="DWYTorso" tip_link="RWrMot3"/>
   </group>
+  <group name="neck">
+    <chain base_link="DWYTorso" tip_link="HeadHokuyo"/>
+  </group>
   <group name="chains">
     <group name="left_leg"/>
     <group name="right_leg"/>
     <group name="torso"/>
     <group name="left_arm"/>
     <group name="right_arm"/>
+    <group name="neck"/>
   </group>
   <rtt-gazebo reference="right_leg">
     <controller type="JointPositionCtrl">
@@ -130,6 +140,11 @@
       <gains damping="30." reference="RWrj2" stiffness="300."/>
     </controller>
     <controller type="JointTorqueCtrl"/>
+  </rtt-gazebo>
+  <rtt-gazebo reference="neck">
+    <controller type="JointPositionCtrl">
+      <gains D="5.0" I="0." P="1000." reference="head_roll"/>
+    </controller>
   </rtt-gazebo>
 </robot>
 
