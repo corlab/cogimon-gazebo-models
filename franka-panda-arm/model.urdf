@@ -4,6 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="world"/>
+  <joint name="panda_world_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.01"/>
+    <parent link="world"/>
+    <child link="panda_link0"/>
+  </joint>
   <link name="panda_link0">
     <inertial>
       <mass value="1.2"/>
