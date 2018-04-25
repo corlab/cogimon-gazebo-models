@@ -7,17 +7,17 @@
   <link name="panda_link0">
     <inertial>
       <mass value="1.2"/>
-      <com rpy="0 0 0" xyz="0 0 0.055"/>
+      <origin rpy="0 0 0" xyz="0 0 0.055"/>
       <inertia ixx="0.00229" ixy="0" ixz="0" iyy="0.00216" iyz="0" izz="0.00229"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link0.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link0.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link0.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link0.stl"/>
       </geometry>
     </collision>
   </link>
@@ -29,12 +29,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link1.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link1.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link1.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -54,12 +54,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link2.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link2.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link2.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -79,12 +79,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link3.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link3.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link3.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link3.stl"/>
       </geometry>
     </collision>
   </link>
@@ -104,12 +104,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link4.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link4.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link4.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link4.stl"/>
       </geometry>
     </collision>
   </link>
@@ -129,12 +129,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link5.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link5.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link5.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link5.stl"/>
       </geometry>
     </collision>
   </link>
@@ -154,12 +154,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link6.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link6.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link6.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link6.stl"/>
       </geometry>
     </collision>
   </link>
@@ -179,12 +179,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/visual/link7.dae"/>
+        <mesh filename="model://franka-panda-arm/meshes/visual/link7.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_panda_arm/meshes/collision/link7.stl"/>
+        <mesh filename="model://franka-panda-arm/meshes/collision/link7.stl"/>
       </geometry>
     </collision>
   </link>

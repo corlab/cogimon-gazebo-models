@@ -7,24 +7,24 @@
   <link name="panda_hand">
     <visual>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/visual/hand.dae"/>
+        <mesh filename="model://franka-hand/meshes/visual/hand.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/collision/hand.stl"/>
+        <mesh filename="model://franka-hand/meshes/collision/hand.stl"/>
       </geometry>
     </collision>
   </link>
   <link name="panda_leftfinger">
     <visual>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/visual/finger.dae"/>
+        <mesh filename="model://franka-hand/meshes/visual/finger.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/collision/finger.stl"/>
+        <mesh filename="model://franka-hand/meshes/collision/finger.stl"/>
       </geometry>
     </collision>
   </link>
@@ -32,13 +32,13 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/visual/finger.dae"/>
+        <mesh filename="model://franka-hand/meshes/visual/finger.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="model://franka_hand/meshes/collision/finger.stl"/>
+        <mesh filename="model://franka-hand/meshes/collision/finger.stl"/>
       </geometry>
     </collision>
   </link>
