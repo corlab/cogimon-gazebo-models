@@ -169,6 +169,11 @@
     <origin rpy="0 0 -0.785398163397" xyz="0 0 0"/>
   </joint>
   <link name="panda_hand">
+    <inertial>
+      <mass value="0.73"/>
+      <origin rpy="0 0 0" xyz="-0.01 0 0.03"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.0025" iyz="0.0" izz="0.0017"/>
+    </inertial>
     <visual>
       <geometry>
         <mesh filename="model://franka-panda-arm-hand/meshes/visual/hand.dae"/>
