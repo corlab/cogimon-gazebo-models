@@ -92,13 +92,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="Waist_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Waist.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/Waist.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="Waist_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Waist.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/Waist.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -118,13 +118,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="green"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipRoll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipRoll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -138,13 +138,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="dark_grey"/>
       <geometry name="LThighUpLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipPitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipPitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="LThighUpLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipPitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipPitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -158,13 +158,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="green"/>
       <geometry name="LThighLowLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipYaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipYaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="LThighLowLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipYaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipYaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -178,13 +178,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="dark_grey"/>
       <geometry name="LLowLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/KneePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/KneePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="LLowLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/KneePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/KneePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -197,14 +197,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LFootmot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/AnklePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/AnklePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LFootmot_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/AnklePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/AnklePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -217,7 +217,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LFoot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
@@ -289,13 +289,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0" xyz="0.0 0 0"/>
       <material name="green"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipRoll.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipRoll.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipRoll.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipRoll.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -309,13 +309,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="dark_grey"/>
       <geometry name="RThighUpLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipPitch.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipPitch.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="RThighUpLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipPitch.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipPitch.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -329,13 +329,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="green"/>
       <geometry name="RThighLowLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/HipYaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/HipYaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="RThighLowLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/HipYaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/HipYaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -349,13 +349,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0." xyz="0. 0. 0."/>
       <material name="dark_grey"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="package://cogimon_urdf/meshes/KneePitch.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/KneePitch.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0." xyz="0.0 0. 0"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/KneePitch.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/KneePitch.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -368,14 +368,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RFootmot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/AnklePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/AnklePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RFootmot_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/AnklePitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/AnklePitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -388,7 +388,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RFoot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
@@ -464,14 +464,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWL_visual">
-        <mesh filename="package://cogimon_urdf/meshes/TorsoRoll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/TorsoRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWL_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/TorsoRoll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/TorsoRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -503,14 +503,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="pennacchio_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Pennacchio.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/Pennacchio.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="pennacchio_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Pennacchio.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="model://iit-cogimon/meshes/simple/Pennacchio.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
