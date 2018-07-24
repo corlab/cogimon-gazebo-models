@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/NeckFixed.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.013918994 -4.54032e-07 0.05985475" rpy="2.82419486285e-05 0.451106981548 6.48033903981e-06"/>
+      <geometry>
+        <cylinder radius="0.0406735" length="0.0666338097193"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

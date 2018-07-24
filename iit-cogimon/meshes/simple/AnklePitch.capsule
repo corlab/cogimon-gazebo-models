@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/AnklePitch.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.0 -1.0941e-13 1.83262e-13" rpy="-1.0081383463 1.57079632675 -1.00813834626"/>
+      <geometry>
+        <cylinder radius="0.0195224" length="0.033835"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/ShoulderYaw.STL">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.007307538565 0.004091138465 -0.03662884" rpy="-3.00242380361 0.242909821838 -2.10390753657"/>
+      <geometry>
+        <cylinder radius="0.0896121" length="0.060822526466"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="0.00100_-0.00100_0.00100">
+    <collision>
+      <origin xyz="0.007307538565 -0.004091138465 -0.03662884" rpy="3.00242380361 0.242909821838 2.10390753657"/>
+      <geometry>
+        <cylinder radius="0.0896121" length="0.060822526466"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

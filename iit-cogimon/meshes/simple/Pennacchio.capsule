@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/Pennacchio.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="4.940327e-05 -1.3088909e-05 0.199037465" rpy="6.44304458641e-05 0.000241841076017 7.79096422325e-09"/>
+      <geometry>
+        <cylinder radius="0.0576073" length="0.396095082405"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

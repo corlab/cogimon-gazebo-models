@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/Chest.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="-0.0417117 4.9e-05 0.04395835" rpy="-1.56990183621 -0.00385969868751 0.00385624777512"/>
+      <geometry>
+        <cylinder radius="0.227763" length="0.0589166624181"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
