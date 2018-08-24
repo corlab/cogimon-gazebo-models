@@ -377,7 +377,7 @@
         <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
 <joint name="lwr_arm_7_tool_joint" type="fixed">
-	<origin rpy="0 0 0" xyz="0 0 0.045" />
+	<origin rpy="0 0 3.141592" xyz="0 0 0.045" />
 	<limit effort="0" lower="0" upper="0" velocity="0" />
     <parent link="lwr_arm_7_link"/>
     <child link="lwr_tool_link"/>
