@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <physics name="update_rate" type="ode">
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <bullet>
+	<solver>
+          <iters>100</iters>
+          <sor>1.55</sor>
+        </solver>
+        <constraints>
+          <contact_surface_layer>0.2</contact_surface_layer>
+          <cfm>0.005</cfm>
+          <erp>0.2</erp>
+        </constraints> 
+      </bullet>
+      <ode>
+	<solver>
+          <iters>200</iters>
+          <sor>1.20</sor>
+        </solver>
+        <constraints>
+          <contact_surface_layer>0.0002</contact_surface_layer>
+          <contact_max_correcting_vel>500</contact_max_correcting_vel>
+          <cfm>0.000001</cfm>
+          <erp>0.3</erp>
+        </constraints> 
+      </ode>
+    </physics>
+
+  </world>
+</sdf>
