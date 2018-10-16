@@ -19,7 +19,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link0.dae"/>
+        <mesh filename="model://franka/meshes/link0.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -28,7 +28,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link0_collision.STL"/>
+        <mesh filename="model://franka/meshes/link0_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -41,7 +41,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link1.dae"/>
+        <mesh filename="model://franka/meshes/link1.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -50,7 +50,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link1_collision.STL"/>
+        <mesh filename="model://franka/meshes/link1_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -71,7 +71,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link2.dae"/>
+        <mesh filename="model://franka/meshes/link2.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -80,7 +80,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link2_collision.STL"/>
+        <mesh filename="model://franka/meshes/link2_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -101,7 +101,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link3.dae"/>
+        <mesh filename="model://franka/meshes/link3.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -110,7 +110,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link3_collision.STL"/>
+        <mesh filename="model://franka/meshes/link3_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -131,7 +131,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link4.dae"/>
+        <mesh filename="model://franka/meshes/link4.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -140,7 +140,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link4_collision.STL"/>
+        <mesh filename="model://franka/meshes/link4_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -161,7 +161,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link5.dae"/>
+        <mesh filename="model://franka/meshes/link5.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -170,7 +170,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link5_collision.STL"/>
+        <mesh filename="model://franka/meshes/link5_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -191,7 +191,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link6.dae"/>
+        <mesh filename="model://franka/meshes/link6.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -200,7 +200,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link6_collision.STL"/>
+        <mesh filename="model://franka/meshes/link6_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -221,7 +221,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link7.dae"/>
+        <mesh filename="model://franka/meshes/link7.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -230,7 +230,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/joshua/workspaces/cogimon_base_ws/cogimon-minimal-nightly-edin/share/gazebo/models/cogimon/Franka/meshes/link7_collision.STL"/>
+        <mesh filename="model://franka/meshes/link7_collision.STL"/>
       </geometry>
     </collision>
   </link>
