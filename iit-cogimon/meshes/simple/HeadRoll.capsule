@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/HeadRoll.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.0526213 -1.23036580045e-05 -0.0215040364547" rpy="-1.11514123253 -0.911280125763 1.20204718816"/>
+      <geometry>
+        <cylinder radius="0.0608765" length="0.0303991056806"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

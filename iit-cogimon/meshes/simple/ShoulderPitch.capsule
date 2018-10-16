@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/ShoulderPitch.STL">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.017831412 -0.05324115 2.3169e-05" rpy="1.69033471763 1.45264918315 1.5721974565"/>
+      <geometry>
+        <cylinder radius="0.0698859" length="0.0373976849456"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="0.00100_-0.00100_0.00100">
+    <collision>
+      <origin xyz="0.017831412 0.05324115 2.3169e-05" rpy="-1.69033471763 1.45264918315 -1.5721974565"/>
+      <geometry>
+        <cylinder radius="0.0698859" length="0.0373976849456"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

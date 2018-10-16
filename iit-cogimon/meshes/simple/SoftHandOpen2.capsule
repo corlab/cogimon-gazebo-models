@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/SoftHandOpen2.STL">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.0068289476 0.0078072758 -0.1256931" rpy="-2.89499147964 0.211295821994 -1.4155549417"/>
+      <geometry>
+        <cylinder radius="0.105258" length="0.0653101397381"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="0.00100_-0.00100_0.00100">
+    <collision>
+      <origin xyz="0.0068289476 -0.0078072758 -0.1256931" rpy="2.89499147964 0.211295821994 1.4155549417"/>
+      <geometry>
+        <cylinder radius="0.105258" length="0.0653101397381"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

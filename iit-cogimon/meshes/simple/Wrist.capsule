@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-cogimon-ros-pkg/cogimon_urdf/meshes/simple/Wrist.STL">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="-5.947637e-09 -0.013199979631 -0.019569765" rpy="2.70790736799 -1.7440880556e-07 3.84233946897e-08"/>
+      <geometry>
+        <cylinder radius="0.0468649" length="0.0628232385677"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="0.00100_-0.00100_0.00100">
+    <collision>
+      <origin xyz="-5.947637e-09 0.013199979631 -0.019569765" rpy="-2.70790736799 -1.7440880556e-07 -3.84233946898e-08"/>
+      <geometry>
+        <cylinder radius="0.0468649" length="0.0628232385677"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

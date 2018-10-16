@@ -46,10 +46,9 @@
   <group name="base">
     <link name="Waist"/>
   </group>
-  <group name="imu_sensors">
-    <!-- NEAREST JOINT TO IMU -->
+  <!--group name="imu_sensors">
     <link name="imu_link"/>
-  </group>
+  </group-->
   <group name="left_arm">
     <chain base_link="DWYTorso" tip_link="l_wrist"/>
   </group>
