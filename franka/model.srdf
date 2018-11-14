@@ -14,7 +14,7 @@
     <link name="Waist"/>
   </group-->
   <group name="full_arm">
-    <chain base_link="and_link0" tip_link="and_link8"/>
+    <chain base_link="panda_link0" tip_link="panda_link8"/>
   </group>
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
@@ -22,22 +22,22 @@
   </group>
   <rtt-gazebo reference="full_arm">
     <controller type="JointPositionCtrl">
-      <gains D="0.1" I="0." P="1000." reference="lwr_arm_0_joint"/>
-      <gains D="0.1" I="0." P="1000." reference="lwr_arm_1_joint"/>
-      <gains D="0.1" I="0." P="600." reference="lwr_arm_2_joint"/>
-      <gains D="0.1" I="0." P="1000." reference="lwr_arm_3_joint"/>
-      <gains D="0.1" I="0." P="100." reference="lwr_arm_4_joint"/>
-      <gains D="0.1" I="0." P="100." reference="lwr_arm_5_joint"/>
-      <gains D="0.01" I="0." P="10." reference="lwr_arm_6_joint"/>
+      <gains D="0.1" I="0." P="1000." reference="panda_joint1"/>
+      <gains D="0.1" I="0." P="1000." reference="panda_joint2"/>
+      <gains D="0.1" I="0." P="600." reference="panda_joint3"/>
+      <gains D="0.1" I="0." P="1000." reference="panda_joint4"/>
+      <gains D="0.1" I="0." P="100." reference="panda_joint5"/>
+      <gains D="0.1" I="0." P="100." reference="panda_joint6"/>
+      <gains D="0.01" I="0." P="10." reference="panda_joint7"/>
     </controller>
     <controller type="JointImpedanceCtrl">
-      <gains damping="30." reference="lwr_arm_0_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_1_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_2_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_3_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_4_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_5_joint" stiffness="300."/>
-      <gains damping="30." reference="lwr_arm_6_joint" stiffness="300."/>
+      <gains damping="30." reference="panda_joint1" stiffness="300."/>
+      <gains damping="30." reference="panda_joint2" stiffness="300."/>
+      <gains damping="30." reference="panda_joint3" stiffness="300."/>
+      <gains damping="30." reference="panda_joint4" stiffness="300."/>
+      <gains damping="30." reference="panda_joint5" stiffness="300."/>
+      <gains damping="30." reference="panda_joint6" stiffness="300."/>
+      <gains damping="30." reference="panda_joint7" stiffness="300."/>
     </controller>
     <controller type="JointTorqueCtrl"/>
   </rtt-gazebo>
