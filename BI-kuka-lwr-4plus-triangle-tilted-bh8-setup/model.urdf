@@ -376,16 +376,17 @@
     <gazebo reference="left_lwr_arm_7_link">
         <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="left_lwr_arm_7_tool_joint" type="revolute">
+<joint name="left_lwr_arm_7_tool_joint" type="fixed">
 	<origin rpy="0 0 0" xyz="0 0 0" />
 	<!-- 3.141592 1.5707 -->
 	<limit effort="0" lower="0" upper="0" velocity="0" />
     <parent link="left_lwr_arm_7_link"/>
-    <child link="left_bhand_palm_link"/>
+    <child link="left/bhand_palm_link"/>
 </joint>
 <gazebo reference="left_lwr_arm_7_tool_joint">
 <provideFeedback>1</provideFeedback>
     <provideFeedback>1</provideFeedback>
+    <preserveFixedJoint>true</preserveFixedJoint>
     <sensor name="left_force_torque" type="force_torque">
       <always_on>true</always_on>
       <visualize>true</visualize>
@@ -398,7 +399,7 @@
 </gazebo>
 
 <!-- left hand start -->
-  <gazebo reference="left_bhand_palm_link">
+  <gazebo reference="left/bhand_palm_link">
     <mu1>1</mu1><!-- 0.5 -->
     <mu2>1</mu2>
     <maxContacts>3</maxContacts>
@@ -411,7 +412,7 @@
       </material>
     </visual>
   </gazebo>
-  <link name="left_bhand_palm_link">
+  <link name="left/bhand_palm_link">
     <inertial>
       <origin xyz="-5.1098e-005 0.0050433 0.036671" rpy="0 0 0"/>
       <mass value="0.50573"/>
@@ -463,7 +464,7 @@
     </collision>
   </link>
   <joint name="left_bhand_palm_surface_joint" type="fixed">
-    <parent link="left_bhand_palm_link"/>
+    <parent link="left/bhand_palm_link"/>
     <child link="left_bhand_palm_surface_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.08"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
@@ -475,7 +476,7 @@
     </inertial>
   </link>
   <joint name="left_bhand_grasp_joint" type="fixed">
-    <parent link="left_bhand_palm_link"/>
+    <parent link="left/bhand_palm_link"/>
     <child link="left_bhand_grasp_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.12"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
@@ -494,7 +495,7 @@
     </inertial>
   </link>
   <joint name="left/finger_1/prox_joint" type="revolute">
-    <parent link="left_bhand_palm_link"/>
+    <parent link="left/bhand_palm_link"/>
     <child link="left/finger_1/prox_link"/>
     <origin rpy="0 0 -1.57079632679" xyz="-0.025 0.0 0.0415"/>
     <axis xyz="0 0 -1"/>
@@ -698,7 +699,7 @@
     </inertial>
   </link>
   <joint name="left/finger_2/prox_joint" type="revolute">
-    <parent link="left_bhand_palm_link"/>
+    <parent link="left/bhand_palm_link"/>
     <child link="left/finger_2/prox_link"/>
     <origin rpy="0 0 -1.57079632679" xyz="0.025 0.0 0.0415"/>
     <axis xyz="0 0 1"/>
@@ -911,7 +912,7 @@
     </inertial>
   </link>
   <joint name="left/finger_3/med_joint" type="revolute">
-    <parent link="left_bhand_palm_link"/>
+    <parent link="left/bhand_palm_link"/>
     <child link="left/finger_3/med_link"/>
     <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.05 0.0754"/>
     <axis xyz="0 0 1"/>
@@ -1412,15 +1413,16 @@
     <gazebo reference="right_lwr_arm_7_link">
         <!--<material value="kuka-lwr.material"/>-->
     </gazebo>
-<joint name="right_lwr_arm_7_tool_joint" type="revolute">
+<joint name="right_lwr_arm_7_tool_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0" />
     <!-- 3.141592 -->
     <limit effort="0" lower="0" upper="0" velocity="0" />
     <parent link="right_lwr_arm_7_link"/>
-    <child link="right_bhand_palm_link"/>
+    <child link="right/bhand_palm_link"/>
 </joint>
 <gazebo reference="right_lwr_arm_7_tool_joint">
-<provideFeedback>1</provideFeedback>
+    <provideFeedback>1</provideFeedback>
+    <preserveFixedJoint>true</preserveFixedJoint>
     <sensor name="right_force_torque" type="force_torque">
       <always_on>true</always_on>
       <visualize>true</visualize>
@@ -1433,7 +1435,7 @@
 </gazebo>
 
 <!-- right hand start -->
-  <gazebo reference="right_bhand_palm_link">
+  <gazebo reference="right/bhand_palm_link">
     <mu1>1</mu1><!-- 0.5 -->
     <mu2>1</mu2>
     <maxContacts>3</maxContacts>
@@ -1446,7 +1448,7 @@
       </material>
     </visual>
   </gazebo>
-  <link name="right_bhand_palm_link">
+  <link name="right/bhand_palm_link">
     <inertial>
       <origin xyz="-5.1098e-005 0.0050433 0.036671"/>
       <mass value="0.50573"/>
@@ -1498,7 +1500,7 @@
     </collision>
   </link>
   <joint name="right_bhand_palm_surface_joint" type="fixed">
-    <parent link="right_bhand_palm_link"/>
+    <parent link="right/bhand_palm_link"/>
     <child link="right_bhand_palm_surface_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.08"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
@@ -1510,7 +1512,7 @@
     </inertial>
   </link>
   <joint name="right_bhand_grasp_joint" type="fixed">
-    <parent link="right_bhand_palm_link"/>
+    <parent link="right/bhand_palm_link"/>
     <child link="right_bhand_grasp_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.12"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
@@ -1529,7 +1531,7 @@
     </inertial>
   </link>
   <joint name="right/finger_1/prox_joint" type="revolute">
-    <parent link="right_bhand_palm_link"/>
+    <parent link="right/bhand_palm_link"/>
     <child link="right/finger_1/prox_link"/>
     <origin rpy="0 0 -1.57079632679" xyz="-0.025 0.0 0.0415"/>
     <axis xyz="0 0 -1"/>
@@ -1741,7 +1743,7 @@
     </inertial>
   </link>
   <joint name="right/finger_2/prox_joint" type="revolute">
-    <parent link="right_bhand_palm_link"/>
+    <parent link="right/bhand_palm_link"/>
     <child link="right/finger_2/prox_link"/>
     <origin rpy="0 0 -1.57079632679" xyz="0.025 0.0 0.0415"/>
     <axis xyz="0 0 1"/>
@@ -1954,7 +1956,7 @@
     </inertial>
   </link>
   <joint name="right/finger_3/med_joint" type="revolute">
-    <parent link="right_bhand_palm_link"/>
+    <parent link="right/bhand_palm_link"/>
     <child link="right/finger_3/med_link"/>
     <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.05 0.0754"/>
     <axis xyz="0 0 1"/>
