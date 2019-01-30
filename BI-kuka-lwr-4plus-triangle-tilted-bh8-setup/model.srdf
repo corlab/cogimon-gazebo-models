@@ -11,6 +11,10 @@
   <!--group name="base">
     <link name="Waist"/>
   </group-->
+  <group name="force_torque_sensors">
+    <joint name="left_force_torque"/>
+    <joint name="right_force_torque"/>
+  </group>
   <group name="left_arm">
     <chain base_link="left_lwr_arm_base_link" tip_link="left_bhand_palm_link"/>
   </group>
