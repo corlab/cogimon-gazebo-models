@@ -1,0 +1,634 @@
+<?xml version="1.0" ?>
+<!--robot name="barrett-bh8" xmlns:xacro="http://www.ros.org/wiki/xacro"-->
+<robot name="barrett-bh8" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Root link is in the world frame-->
+  <link name="world"/>
+  <joint name="bhand_base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="bhand_palm_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.06"/>
+  </joint>
+  <gazebo reference="bhand_palm_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>3</maxContacts>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/cogimon-gazebo-models/barrett-bh8/materials/barrett.material</uri>
+          <name>BHand/BlueAluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="bhand_palm_link">
+    <inertial>
+      <origin xyz="-5.1098e-005 0.0050433 0.036671"/>
+      <mass value="0.50573"/>
+      <inertia ixx="3.8374e-005" ixy="-5.604e-008" ixz="-4.2034e-005" iyy="0.00022405" iyz="1.3283e-007" izz="0.00020045"/>
+    </inertial>
+    <visual>
+      <!--<material name="WAMGrey">-->
+      <!--<color rgba="0.9 0.9 0.9 0.0"/>-->
+      <!--</material>-->
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_palm_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- wrist -->
+    <collision>
+      <origin xyz="0 0 0.02029"/>
+      <geometry>
+        <cylinder length="0.042" radius="0.045"/>
+      </geometry>
+    </collision>
+    <!-- spine -->
+    <collision>
+      <origin xyz="0 0.01105 0.05768"/>
+      <geometry>
+        <box size="0.024 0.108 0.033"/>
+      </geometry>
+    </collision>
+    <!-- palm -->
+    <collision>
+      <origin xyz="0 0 0.07243"/>
+      <geometry>
+        <box size="0.076 0.046 0.012"/>
+      </geometry>
+    </collision>
+    <!-- F1 knuckle -->
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0 0.05 0.07527"/>
+      <geometry>
+        <cylinder length="0.024" radius="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="bhand_palm_surface_joint" type="fixed">
+    <parent link="bhand_palm_link"/>
+    <child link="bhand_palm_surface_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.08"/>
+    <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
+  </joint>
+  <link name="bhand_palm_surface_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="bhand_grasp_joint" type="fixed">
+    <parent link="bhand_palm_link"/>
+    <child link="bhand_grasp_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.12"/>
+    <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
+  </joint>
+  <link name="bhand_grasp_link">
+    <collision>
+      <!-- https://github.com/ros-planning/moveit_core/issues/158 -->
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.00001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="finger_1/prox_joint" type="revolute">
+    <parent link="bhand_palm_link"/>
+    <child link="finger_1/prox_link"/>
+    <origin rpy="0 0 -1.57079632679" xyz="-0.025 0.0 0.0415"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="5" lower="0" upper="3.14159265359" velocity="10.0"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_1/prox_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_1/prox_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>BHand/BlueAluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_1/prox_link">
+    <inertial>
+      <origin xyz="0.023133 0.00078642 0.00052792"/>
+      <mass value="0.14109"/>
+      <inertia ixx="4.872e-006" ixy="1.7103e-006" ixz="3.4041e-008" iyy="7.6588e-005" iyz="2.3133e-008" izz="7.7733e-005"/>
+    </inertial>
+    <visual>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_prox_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- base -->
+    <collision>
+      <origin xyz="0.03217 0.0 0.01674"/>
+      <geometry>
+        <box size="0.066 0.024 0.033"/>
+      </geometry>
+    </collision>
+    <!-- F2/F3 knuckle -->
+    <collision>
+      <origin rpy="1.5707 0 0" xyz="0.05 0.0 0.034"/>
+      <geometry>
+        <cylinder length="0.024" radius="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_1/med_joint" type="revolute">
+    <parent link="finger_1/prox_link"/>
+    <child link="finger_1/med_link"/>
+    <origin rpy="1.57079632679 0 0" xyz="0.05 0.0 0.03390"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="2.44346095279" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_1/med_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_1/med_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_1/med_link">
+    <inertial>
+      <origin xyz="0.023133 0.00078642 0.00052792"/>
+      <mass value="0.062139"/>
+      <inertia ixx="4.872e-006" ixy="1.7103e-006" ixz="3.4041e-008" iyy="7.6588e-005" iyz="2.3133e-008" izz="7.7733e-005"/>
+    </inertial>
+    <visual>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_med_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- spine -->
+    <collision>
+      <origin xyz="0.03493 0.003 -0.0007"/>
+      <geometry>
+        <box size="0.07 0.019 0.006"/>
+      </geometry>
+    </collision>
+    <!-- protrusion -->
+    <collision>
+      <origin xyz="0.03894 0.00376 -0.0007"/>
+      <geometry>
+        <box size="0.031 0.023 0.019"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_1/dist_joint" type="revolute">
+    <parent link="finger_1/med_link"/>
+    <child link="finger_1/dist_link"/>
+    <origin rpy="0 0 0.785398163397" xyz="0.06994 0.003 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="0.837758040957" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_1/dist_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_1/dist_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <selfCollide>false</selfCollide>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_1/dist_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.022825 0.0010491 0.0004203"/>
+      <mass value="0.041377"/>
+      <inertia ixx="3.1582e-006" ixy="1.4308e-006" ixz="1.0106e-007" iyy="3.8376e-005" iyz="0" izz="3.7275e-005"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 -0.785398163397"/>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -0.785398163397"/>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_convex.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_1/tip_joint" type="fixed">
+    <parent link="finger_1/dist_link"/>
+    <child link="finger_1/tip_link"/>
+    <origin rpy="0 0 0" xyz="0.05 0.0 0.0"/>
+  </joint>
+  <link name="finger_1/tip_link">
+    <inertial>
+      <mass value="1E-6"/>
+      <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/>
+    </inertial>
+  </link>
+  <joint name="finger_2/prox_joint" type="revolute">
+    <parent link="bhand_palm_link"/>
+    <child link="finger_2/prox_link"/>
+    <origin rpy="0 0 -1.57079632679" xyz="0.025 0.0 0.0415"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="0" upper="3.14159265359" velocity="10.0"/>
+    <!-- Change the damping to influence the spread behavior -->
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_2/prox_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_2/prox_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>BHand/BlueAluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_2/prox_link">
+    <inertial>
+      <origin xyz="0.023133 0.00078642 0.00052792"/>
+      <mass value="0.14109"/>
+      <inertia ixx="4.872e-006" ixy="1.7103e-006" ixz="3.4041e-008" iyy="7.6588e-005" iyz="2.3133e-008" izz="7.7733e-005"/>
+    </inertial>
+    <visual>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_prox_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- base -->
+    <collision>
+      <origin xyz="0.03217 0.0 0.01674"/>
+      <geometry>
+        <box size="0.066 0.024 0.033"/>
+      </geometry>
+    </collision>
+    <!-- F2/F3 knuckle -->
+    <collision>
+      <origin rpy="1.5707 0 0" xyz="0.05 0.0 0.034"/>
+      <geometry>
+        <cylinder length="0.024" radius="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_2/med_joint" type="revolute">
+    <parent link="finger_2/prox_link"/>
+    <child link="finger_2/med_link"/>
+    <origin rpy="1.57079632679 0 0" xyz="0.05 0.0 0.03390"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="2.44346095279" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_2/med_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_2/med_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_2/med_link">
+    <inertial>
+      <origin xyz="0.023133 0.00078642 0.00052792"/>
+      <mass value="0.062139"/>
+      <inertia ixx="4.872e-006" ixy="1.7103e-006" ixz="3.4041e-008" iyy="7.6588e-005" iyz="2.3133e-008" izz="7.7733e-005"/>
+    </inertial>
+    <visual>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_med_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- spine -->
+    <collision>
+      <origin xyz="0.03493 0.003 -0.0007"/>
+      <geometry>
+        <box size="0.07 0.019 0.006"/>
+      </geometry>
+    </collision>
+    <!-- protrusion -->
+    <collision>
+      <origin xyz="0.03894 0.00376 -0.0007"/>
+      <geometry>
+        <box size="0.031 0.023 0.019"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_2/dist_joint" type="revolute">
+    <parent link="finger_2/med_link"/>
+    <child link="finger_2/dist_link"/>
+    <origin rpy="0 0 0.785398163397" xyz="0.06994 0.003 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="0.837758040957" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_2/dist_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_2/dist_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <selfCollide>false</selfCollide>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_2/dist_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.022825 0.0010491 0.0004203"/>
+      <mass value="0.041377"/>
+      <inertia ixx="3.1582e-006" ixy="1.4308e-006" ixz="1.0106e-007" iyy="3.8376e-005" iyz="0" izz="3.7275e-005"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 -0.785398163397"/>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -0.785398163397"/>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_convex.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_2/tip_joint" type="fixed">
+    <parent link="finger_2/dist_link"/>
+    <child link="finger_2/tip_link"/>
+    <origin rpy="0 0 0" xyz="0.05 0.0 0.0"/>
+  </joint>
+  <link name="finger_2/tip_link">
+    <inertial>
+      <mass value="1E-6"/>
+      <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/>
+    </inertial>
+  </link>
+  <joint name="finger_3/med_joint" type="revolute">
+    <parent link="bhand_palm_link"/>
+    <child link="finger_3/med_link"/>
+    <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.05 0.0754"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="2.44346095279" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_3/med_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_3/med_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_3/med_link">
+    <inertial>
+      <origin xyz="0.023133 0.00078642 0.00052792"/>
+      <mass value="0.062139"/>
+      <inertia ixx="4.872e-006" ixy="1.7103e-006" ixz="3.4041e-008" iyy="7.6588e-005" iyz="2.3133e-008" izz="7.7733e-005"/>
+    </inertial>
+    <visual>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_med_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <!-- spine -->
+    <collision>
+      <origin xyz="0.03493 0.003 -0.0007"/>
+      <geometry>
+        <box size="0.07 0.019 0.006"/>
+      </geometry>
+    </collision>
+    <!-- protrusion -->
+    <collision>
+      <origin xyz="0.03894 0.00376 -0.0007"/>
+      <geometry>
+        <box size="0.031 0.023 0.019"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_3/dist_joint" type="revolute">
+    <parent link="finger_3/med_link"/>
+    <child link="finger_3/dist_link"/>
+    <origin rpy="0 0 0.785398163397" xyz="0.06994 0.003 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="0" upper="0.837758040957" velocity="10.00"/>
+    <dynamics damping="0.35" friction="0"/>
+  </joint>
+  <gazebo reference="finger_3/dist_joint">
+    <provideFeedback>true</provideFeedback>
+    <!--<implicitSpringDamper>true</implicitSpringDamper>-->
+    <!--<kp>100</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<kp>0.001</kp>-->
+    <!--<kd>0.01</kd>-->
+    <!--<stopCfm>0.5</stopCfm>-->
+    <!--<stopErp>0.5</stopErp>-->
+    <implicitSpringDamper>true</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="finger_3/dist_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <maxContacts>1</maxContacts>
+    <selfCollide>false</selfCollide>
+    <!--<kp>5000</kp>-->
+    <!--<kd>0.02</kd>-->
+    <!--<kp>3000</kp>-->
+    <kd>0.1</kd>
+    <visual name="visual_shiny">
+      <material>
+        <script>
+          <uri>/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/materials/barrett.material</uri>
+          <name>Wam/Aluminum</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <link name="finger_3/dist_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.022825 0.0010491 0.0004203"/>
+      <mass value="0.041377"/>
+      <inertia ixx="3.1582e-006" ixy="1.4308e-006" ixz="1.0106e-007" iyy="3.8376e-005" iyz="0" izz="3.7275e-005"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 -0.785398163397"/>
+      <material name="WAMGrey">
+        <color rgba="0.9 0.9 0.9 0.0"/>
+      </material>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_fine.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -0.785398163397"/>
+      <geometry>
+        <mesh filename="/home/dwigand/code/cogimon/CoSimA/repos/ROS_WORKSPACE/src/barrett_model/models/sw_meshes/bhand/bhand_finger_dist_link_convex.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_3/tip_joint" type="fixed">
+    <parent link="finger_3/dist_link"/>
+    <child link="finger_3/tip_link"/>
+    <origin rpy="0 0 0" xyz="0.05 0.0 0.0"/>
+  </joint>
+  <link name="finger_3/tip_link">
+    <inertial>
+      <mass value="1E-6"/>
+      <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/>
+    </inertial>
+  </link>
+
+  <!--gazebo>
+    <plugin name="MimicPlugin_j11" filename="libgazebo_mimic_plugin.so">
+      <joint>finger_1/prox_joint</joint>
+      <mimicJoint>finger_2/prox_joint</mimicJoint>
+    </plugin>
+  </gazebo-->
+</robot>
+
