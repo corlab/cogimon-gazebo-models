@@ -446,9 +446,6 @@
     <origin rpy="0 0 0" xyz="0 0 0.08"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
   </joint>
-  <gazebo reference="bhand_palm_surface_joint">
-    <preserveFixedJoint>true</preserveFixedJoint>
-  </gazebo>
   <link name="bhand_palm_surface_link">
     <inertial>
       <mass value="0.00001"/>
@@ -461,9 +458,6 @@
     <origin rpy="0 0 0" xyz="0 0 0.12"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
   </joint>
-  <gazebo reference="bhand_grasp_joint">
-    <preserveFixedJoint>true</preserveFixedJoint>
-  </gazebo>
   <link name="bhand_grasp_link">
     <collision>
       <!-- https://github.com/ros-planning/moveit_core/issues/158 -->
