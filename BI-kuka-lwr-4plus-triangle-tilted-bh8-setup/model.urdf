@@ -29,6 +29,7 @@
     <link name="world" />
     <joint name="left_arm_world_joint" type="fixed">
         <origin rpy="0.46365 0.25268 2.6779" xyz="0 0.15 0.01" />
+        <!-- <origin rpy="0.46373 0.25255 2.6780" xyz="0 0.15 0.01"/> -->
         <parent link="world" />
         <child link="left_lwr_arm_base_link" />
     </joint>
@@ -469,6 +470,9 @@
     <origin rpy="0 0 0" xyz="0 0 0.08"/>
     <limit effort="30" lower="0" upper="3.14159265359" velocity="5.0"/>
   </joint>
+  <!-- <gazebo reference="left_bhand_palm_surface_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo> -->
   <link name="left_bhand_palm_surface_link">
     <inertial>
       <mass value="0.00001"/>
@@ -1062,6 +1066,50 @@
       <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/>
     </inertial>
   </link>
+
+  <joint name="left/compliance_joint" type="fixed">
+    <parent link="left/bhand_palm_link"/>
+    <child link="left/compliance_link"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.18"/>
+  </joint>
+
+   <link name="left/compliance_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="4e-6" ixy="0" ixz="0" iyy="4e-6" iyz="0" izz="4e-6"/>
+      <!-- <mass value="1E-6"/> -->
+      <!-- <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/> -->
+    </inertial>
+    <visual>
+      <geometry>
+         <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <!--collision>
+      <geometry>
+        <sphere radius="0.00001"/>
+      </geometry>
+    </collision> -->
+  </link>
+
+  <gazebo reference="left/compliance_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <!-- <link name="left/compliance_link">
+    <inertial>
+      <mass value="1E-6"/>
+      <inertia ixx="1E-6" ixy="0" ixz="0" iyy="1E-6" iyz="0" izz="1E-6"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0"/>
+      <geometry>
+        <sphere>
+            <radius>0.5</radius>
+        </sphere>
+      </geometry>
+    </visual>
+  </link> -->
 <!-- left hand end -->
 
 <joint name="right_arm_world_joint" type="fixed">
