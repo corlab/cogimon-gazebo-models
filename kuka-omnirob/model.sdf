@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.4">
+   <model name="kuka-omnirob">
+      <!--static>true</static-->
+      <link name="chassis">
+         <pose>0 0 0 0 0 0</pose>
+         <collision name="collision">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobB.dae</uri>
+               </mesh>
+            </geometry>
+         </collision>
+         <visual name="visual">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobB.dae</uri>
+               </mesh>
+            </geometry>
+         </visual>
+         <inertial>
+            <mass value="10" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+         <gravity>1</gravity>
+      </link>
+      <link name="front_left_wheel">
+         <pose>0.242 -0.34687 0.12999 0 0 0</pose>
+         <collision name="collision">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobFLWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </collision>
+         <visual name="visual">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobFLWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </visual>
+         <inertial>
+            <mass value="10" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="front_right_wheel">
+         <pose>-0.242 -0.3466 0.12999 0 0 0</pose>
+         <collision name="collision">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobFRWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </collision>
+         <visual name="visual">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobFRWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </visual>
+         <inertial>
+            <mass value="10" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="back_left_wheel">
+         <pose>0.242 0.3474 0.12999 0 0 0</pose>
+         <collision name="collision">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobBLWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </collision>
+         <visual name="visual">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobBLWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </visual>
+         <inertial>
+            <mass value="10" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="back_right_wheel">
+         <pose>-0.242 0.3474 0.12999 0 0 0</pose>
+         <collision name="collision">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobBRWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </collision>
+         <visual name="visual">
+            <geometry>
+               <mesh>
+                  <scale>1 1 1</scale>
+                  <uri>model://kuka-omnirob/meshes/omnirobBRWheel.dae</uri>
+               </mesh>
+            </geometry>
+         </visual>
+         <inertial>
+            <mass value="10" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <!-- Joints -->
+      <joint type="revolute" name="front_left_hinge">
+         <pose>0 0 0 0 0 0</pose>
+         <parent>chassis</parent>
+         <child>front_left_wheel</child>
+         <axis>
+            <xyz>1 0 0</xyz>
+         </axis>
+      </joint>
+      <joint type="revolute" name="front_right_hinge">
+         <pose>0 0 0 0 0 0</pose>
+         <parent>chassis</parent>
+         <child>front_right_wheel</child>
+         <axis>
+            <xyz>1 0 0</xyz>
+         </axis>
+      </joint>
+      <joint type="revolute" name="back_left_hinge">
+         <pose>0 0 0 0 0 0</pose>
+         <parent>chassis</parent>
+         <child>back_left_wheel</child>
+         <axis>
+            <xyz>1 0 0</xyz>
+         </axis>
+      </joint>
+      <joint type="revolute" name="back_right_hinge">
+         <pose>0 0 0 0 0 0</pose>
+         <parent>chassis</parent>
+         <child>back_right_wheel</child>
+         <axis>
+            <xyz>1 0 0</xyz>
+         </axis>
+      </joint>
+   </model>
+</sdf>

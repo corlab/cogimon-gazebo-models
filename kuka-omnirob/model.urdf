@@ -1,0 +1,369 @@
+<?xml version="1.0" ?>
+<robot name="kuka-omnirob" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!--static>true</static-->
+    <link name="base_link">
+        <inertial>
+			<mass value="250" />
+			<origin rpy="0 .0 0" xyz="0 -0.00000 0.24" />
+			<inertia ixx="25.77086" ixy="-0.0" ixz="-0.0" iyy="53.79704" iyz="-0.0" izz="58.79601" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobBaseRot.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<!--<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobBaseRot.dae" scale="1 1 1" />
+			</geometry> -->
+			<origin rpy="0 0 0" xyz="0 0 0.35" />
+			<geometry>
+				<box size="0.915855 0.547 0.585000"/>
+         	</geometry>
+		</collision>
+	</link>
+    <gazebo reference="base_link">
+    </gazebo>
+
+	<link name="fr_laser_link">
+		<inertial>
+			<mass value="0.01" />
+			<origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/hokuyo.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/hokuyo.dae" scale="1 1 1" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="fr_laser_link">
+      <sensor type="ray" name="laser_front">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>350</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.141593</min_angle>
+              <max_angle>1.570796</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+		<plugin name="fr_laser_link" filename="libRayPlugin.so" />
+      </sensor>
+    </gazebo>
+
+	<joint name="fr_laser_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="0.56029 -0.33 0.13937" />
+		<parent link="base_link" />
+		<child link="fr_laser_link" />
+	</joint>
+	<gazebo reference="fr_laser_joint">
+	</gazebo>
+
+	<link name="bl_laser_link">
+		<inertial>
+			<mass value="0.01" />
+			<origin rpy="0 0 -1.570796" xyz="0.0 0.0 0.0" />
+			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/hokuyo.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/hokuyo.dae" scale="1 1 1" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="bl_laser_link">
+      <sensor type="ray" name="laser_back">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>350</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>4.71239</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+		<plugin name="bl_laser_link" filename="libRayPlugin.so" />
+      </sensor>
+    </gazebo> 
+
+	<joint name="bl_laser_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="-0.56029 0.33 0.13937" />
+		<parent link="base_link" />
+		<child link="bl_laser_link" />
+	</joint>
+	<gazebo reference="bl_laser_joint">
+	</gazebo>
+
+
+  <link name="bl_wheel">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0.012412" ixy="-0.000712" ixz="0.000503" iyy="0.015218" iyz="-0.000004" izz="0.011764" />
+			<mass value="0.400000" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.037 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobBLWheelRot.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="1.5708 0 0" xyz="0 0 0" />
+			<geometry>
+				<cylinder length="0.005" radius="0.125"/>
+			</geometry>
+			<surface>
+			<friction>
+				<ode>
+				<mu>0</mu>
+				<mu2>0</mu2>
+				<fdir1>0 0 0</fdir1>
+				<slip1>0</slip1>
+				<slip2>0</slip2>
+				</ode>
+			</friction>
+			<bounce>
+				<restitution_coefficient>0</restitution_coefficient>
+				<threshold>0</threshold>
+			</bounce>
+			<contact>
+				<ode>
+				<soft_cfm>0</soft_cfm>
+				<soft_erp>0.200000</soft_erp>
+				<kp>10000000000000.000000</kp>
+				<kd>100000000000.000000</kd>
+				<min_depth>0</min_depth>
+				</ode>
+			</contact>
+			</surface>
+			<laser_retro>0</laser_retro>
+		</collision>
+	</link>
+	<gazebo reference="bl_wheel_link">
+	</gazebo>
+
+	<joint name="bl_wheel_joint" type="continuous">
+		<origin rpy="0 3.14159 0" xyz="-0.347000 0.242000 0.130000" />
+		<axis xyz="0 1 0" />
+		<parent link="base_link" />
+		<child link="bl_wheel" />
+	</joint>
+	<gazebo reference="bl_wheel_joint">
+	</gazebo>
+
+	<origin xyz="0 0 0" rpy="0 0 0" />
+
+	<link name="br_wheel">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0.012412" ixy="-0.000712" ixz="0.000503" iyy="0.015218" iyz="-0.000004" izz="0.011764" />
+			<mass value="0.400000" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 -0.0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobBRWheelRot.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="1.5708 0 0" xyz="0 0 0" />
+			<geometry>
+				<cylinder length="0.005" radius="0.125"/>
+			</geometry>
+			<surface>
+			<friction>
+				<ode>
+				<mu>0</mu>
+				<mu2>0</mu2>
+				<fdir1>0 0 0</fdir1>
+				<slip1>0</slip1>
+				<slip2>0</slip2>
+				</ode>
+			</friction>
+			<bounce>
+				<restitution_coefficient>0</restitution_coefficient>
+				<threshold>0</threshold>
+			</bounce>
+			<contact>
+				<ode>
+				<soft_cfm>0</soft_cfm>
+				<soft_erp>0.200000</soft_erp>
+				<kp>10000000000000.000000</kp>
+				<kd>100000000000.000000</kd>
+				<min_depth>0</min_depth>
+				</ode>
+			</contact>
+			</surface>
+			<laser_retro>0</laser_retro>
+		</collision>
+	</link>
+	<gazebo reference="br_wheel_link">
+	</gazebo>
+
+	<joint name="br_wheel_joint" type="continuous">
+		<origin rpy="0 0 0" xyz="-0.347000 -0.242000 0.130000" />
+		<axis xyz="0 1 0" />
+		<parent link="base_link" />
+		<child link="br_wheel" />
+	</joint>
+	<gazebo reference="br_wheel_joint">
+	</gazebo>
+
+	<link name="fr_wheel">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0.012412" ixy="-0.000712" ixz="0.000503" iyy="0.015218" iyz="-0.000004" izz="0.011764" />
+			<mass value="0.400000" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 -0.0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobFRWheelRot.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="1.5708 0 0" xyz="0 0 0" />
+			<geometry>
+				<cylinder length="0.005" radius="0.125"/>
+			</geometry>
+			<surface>
+			<friction>
+				<ode>
+				<mu>0</mu>
+				<mu2>0</mu2>
+				<fdir1>0 0 0</fdir1>
+				<slip1>0</slip1>
+				<slip2>0</slip2>
+				</ode>
+			</friction>
+			<bounce>
+				<restitution_coefficient>0</restitution_coefficient>
+				<threshold>0</threshold>
+			</bounce>
+			<contact>
+				<ode>
+				<soft_cfm>0</soft_cfm>
+				<soft_erp>0.200000</soft_erp>
+				<kp>10000000000000.000000</kp>
+				<kd>100000000000.000000</kd>
+				<min_depth>0</min_depth>
+				</ode>
+			</contact>
+			</surface>
+			<laser_retro>0</laser_retro>
+		</collision>
+	</link>
+	<gazebo reference="fr_wheel_link">
+	</gazebo>
+
+	<joint name="fr_wheel_joint" type="continuous">
+		<origin rpy="0 0 0" xyz="0.347000 -0.242000 0.130000" />
+		<axis xyz="0 1 0" />
+		<parent link="base_link" />
+		<child link="fr_wheel" />
+	</joint>
+	<gazebo reference="fr_wheel_joint">
+	</gazebo>
+
+	<link name="fl_wheel">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0.012412" ixy="-0.000712" ixz="0.000503" iyy="0.015218" iyz="-0.000004" izz="0.011764" />
+			<mass value="0.400000" />
+		</inertial>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0" />
+			<geometry>
+				<mesh filename="model://kuka-omnirob/meshes/omnirobFLWheelRot.dae" scale="1 1 1" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="1.5708 0 0" xyz="0 0 0" />
+			<geometry>
+				<cylinder length="0.005" radius="0.125"/>
+			</geometry>
+			<surface>
+			<friction>
+				<ode>
+				<mu>0</mu>
+				<mu2>0</mu2>
+				<fdir1>0 0 0</fdir1>
+				<slip1>0</slip1>
+				<slip2>0</slip2>
+				</ode>
+			</friction>
+			<bounce>
+				<restitution_coefficient>0</restitution_coefficient>
+				<threshold>0</threshold>
+			</bounce>
+			<contact>
+				<ode>
+				<soft_cfm>0</soft_cfm>
+				<soft_erp>0.200000</soft_erp>
+				<kp>10000000000000.000000</kp>
+				<kd>100000000000.000000</kd>
+				<min_depth>0</min_depth>
+				</ode>
+			</contact>
+			</surface>
+			<laser_retro>0</laser_retro>
+		</collision>
+	</link>
+	<gazebo reference="fl_wheel_link">
+	</gazebo>
+
+	<joint name="fl_wheel_joint" type="continuous">
+		<origin rpy="0 0 0" xyz="0.347000 0.242000 0.130000" />
+		<axis xyz="0 1 0" />
+		<parent link="base_link" />
+		<child link="fl_wheel" />
+	</joint>
+	<gazebo reference="fl_wheel_joint">
+	</gazebo>
+
+</robot>

@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name='Rail'>
+    <link name='Rail_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.75086944724</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.76026106805</iyy>
+          <iyz>0</iyz>
+          <izz>0.01059046669</izz>
+        </inertia>
+      </inertial>
+      <collision name='Rail_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rail/meshes/Rail-small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Rail_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rail/meshes/Rail-small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <pose frame=''>0 0 0 0 0 0</pose>
+  </model>
+</sdf>
+

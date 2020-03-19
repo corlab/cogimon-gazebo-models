@@ -380,6 +380,13 @@
         </script>
       </material>
     </visual>
+
+    <sensor name='palm_collision_contact' type='contact'>
+      <contact>
+        <collision>bh8/bhand_palm_link_collision_2</collision>
+      </contact>
+      <plugin name="gazebo_contact" filename="libContactPlugin.so" />
+    </sensor>
   </gazebo>
   <link name="bh8/bhand_palm_link">
     <inertial>
