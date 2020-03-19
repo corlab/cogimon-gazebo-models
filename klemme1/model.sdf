@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name='klemme1'>
+    <link name='klemme1_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.7</mass>
+        <inertia>
+          <ixx>0.0033299</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0019311</iyy>
+          <iyz>0</iyz>
+          <izz>0.0048214</izz>
+        </inertia>
+      </inertial>
+      <collision name='klemme1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://klemme1/meshes/klemme1-small-collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='klemme1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://klemme1/meshes/klemme1-small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <pose frame=''>0 0 0 0 0 0</pose>
+  </model>
+</sdf>
+
