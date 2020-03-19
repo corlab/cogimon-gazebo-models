@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.6.3)
 
 project(cogimon-gazebo-models)
 
+add_subdirectory(barrett-bh8/plugin)
+
 file(GLOB DEPLOY_FILES_AND_DIRS "${PROJECT_SOURCE_DIR}/*")
 foreach(ITEM ${DEPLOY_FILES_AND_DIRS})
    get_filename_component(tmpName ${ITEM} NAME)
