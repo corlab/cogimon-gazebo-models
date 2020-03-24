@@ -1,6 +1,6 @@
-<?xml version='1.0'?>
+<?xml version="1.0" ?>
 <sdf version='1.4'>
-  <model name='SchunkEGP40'>
+  <model name='schunk-egp-40'>
     <link name='SchunkEGP40_link'>
       <pose>0 0 0 0 0 0</pose>
       <inertial>
@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://schunk-egp-40/meshes/schunk-egp-40.dae</uri>
+            <uri>model://schunk-egp-40/meshes/schunk-egp-40-collision.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -50,12 +50,11 @@
         </inertia>
       </inertial>
       <collision name='SchunkEGP40_Finger1_link_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0.0005 0.006075 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae</uri>
-          </mesh>
+          <box>
+            <size>0.006 0.016 0.01215</size>
+          </box>
         </geometry>
       </collision>
       <visual name='SchunkEGP40_Finger1_link_visual'>
@@ -84,12 +83,11 @@
         </inertia>
       </inertial>
       <collision name='SchunkEGP40_Finger2_link_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0.0005 0.006075 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae</uri>
-          </mesh>
+          <box>
+            <size>0.006 0.016 0.01215</size>
+          </box>
         </geometry>
       </collision>
       <visual name='SchunkEGP40_Finger2_link_visual'>
@@ -103,23 +101,24 @@
       </visual>
     </link>
 
-    <joint name='SchunkEGP40_link_JOINT_0' type='prismatic'>
+    <joint name='SchunkEGP40_Finger2_joint' type='prismatic'>
+      <provide_feedback>true</provide_feedback>
       <parent>SchunkEGP40_link</parent>
       <child>SchunkEGP40_Finger2_link</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
         <xyz>-1 0 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>0</lower>
           <upper>0.01</upper>
-          <effort>-1</effort>
+          <effort>1</effort>
           <velocity>-1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
         </dynamics>
       </axis>
@@ -136,23 +135,24 @@
         </ode>
       </physics>
     </joint>
-    <joint name='SchunkEGP40_link_JOINT_1' type='prismatic'>
+    <joint name='SchunkEGP40_Finger1_joint' type='prismatic'>
+      <provide_feedback>true</provide_feedback>
       <parent>SchunkEGP40_link</parent>
       <child>SchunkEGP40_Finger1_link</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>-1 -0 -0</xyz>
+        <xyz>-1 0 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>0</lower>
           <upper>0.01</upper>
-          <effort>-1</effort>
+          <effort>1</effort>
           <velocity>-1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
         </dynamics>
       </axis>
