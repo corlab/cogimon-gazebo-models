@@ -1,0 +1,77 @@
+material klemme1/Yellow
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 1 1 0 1
+      diffuse 1 1 0 1
+      specular 0 0 0 0 0
+    }
+  }
+}
+
+material klemme1/ZincYellow
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 0.9725 0.9529 0.2078 1
+      diffuse 0.9725 0.9529 0.2078 1
+      specular 0.9725 0.9529 0.2078 1 1
+    }
+  }
+}
+
+material klemme1/DarkYellow
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 0.7 0.7 0 1
+      diffuse 0.7 0.7 0 1
+      specular 0 0 0 0 0
+    }
+  }
+}
+
+material klemme1/YellowGlow : klemme1/Yellow
+{
+  technique
+  {
+    pass light
+    {
+      emissive 1 1 0
+    }
+  }
+}
+
+material klemme1/SkyBlue
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 0.13 0.44 0.70
+      diffuse 0 0 1
+      specular 0.1 0.1 0.1 1 1
+    }
+  }
+}
+
+material klemme1/Orange
+{
+  technique
+  {
+    pass ambient
+    {
+      lighting on
+
+      ambient 1 0.5088 0.0468 1
+      diffuse 1 0.5088 0.0468 1
+      specular 0.5 0.5 0.5 128
+    }
+  }
+}

@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://klemme1/meshes/klemme1-small-collision.stl</uri>
+            <uri>model://klemme1/meshes/klemme1-collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -29,9 +29,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://klemme1/meshes/klemme1-small.stl</uri>
+            <uri>model://klemme1/meshes/klemme1.stl</uri>
           </mesh>
         </geometry>
+<!--         <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 1 0 1</emissive>
+        </material> -->
+        <material>
+          <script>
+            <uri>model://klemme1/materials/scripts/klemme1.material</uri>
+            <name>klemme1/Orange</name>
+          </script>
+        </material>
       </visual>
     </link>
     <pose frame=''>0 0 0 0 0 0</pose>

@@ -4,15 +4,30 @@
     <link name='SchunkEGP40_link'>
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>1.0</mass>
+        <pose>0.00078059 -0.00070996 0.04726637 0 0 0</pose>
+        <mass>0.6</mass>
         <inertia>
-          <ixx>0.75086944724</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.76026106805</iyy>
-          <iyz>0</iyz>
-          <izz>0.01059046669</izz>
+          <!-- <ixx>4.7752e-07</ixx>
+          <ixy>-1.0284e-10</ixy>
+          <ixz>6.2695e-09</ixz>
+          <iyy>5.3954e-07</iyy>
+          <iyz>3.6011e-09</iyz>
+          <izz>2.7978e-07</izz> -->
+          <!-- Divided by volume -->
+          <!-- Volume?: 0.000420444397 -->
+          <ixx>0.0011357</ixx>
+          <ixy>-0.00000024461</ixy>
+          <ixz>0.000014912</ixz>
+          <iyy>0.0012832</iyy>
+          <iyz>0.0000085651</iyz>
+          <izz>0.00066545</izz>
+          <!-- Multiplied by Mass -->
+          <!-- <ixx>0.0011357</ixx>
+          <ixy>-0.00000024461</ixy>
+          <ixz>0.000014912</ixz>
+          <iyy>0.0012832</iyy>
+          <iyz>0.0000085651</iyz>
+          <izz>0.00066545</izz> -->
         </inertia>
       </inertial>
       <collision name='SchunkEGP40_link_collision'>
@@ -39,14 +54,14 @@
       <pose>0.016800 0.000500 0.108000 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>1.0</mass>
+        <mass>0.04</mass>
         <inertia>
-          <ixx>0.75086944724</ixx>
+          <ixx>0.0000013454</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.76026106805</iyy>
+          <iyy>0.00000061207</iyy>
           <iyz>0</iyz>
-          <izz>0.01059046669</izz>
+          <izz>0.00000097333</izz>
         </inertia>
       </inertial>
       <collision name='SchunkEGP40_Finger1_link_collision'>
@@ -72,14 +87,14 @@
       <pose>-0.016800 0.000500 0.108000 0 0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>1.0</mass>
+        <mass>0.04</mass>
         <inertia>
-          <ixx>0.75086944724</ixx>
+          <ixx>0.0000013454</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.76026106805</iyy>
+          <iyy>0.00000061207</iyy>
           <iyz>0</iyz>
-          <izz>0.01059046669</izz>
+          <izz>0.00000097333</izz>
         </inertia>
       </inertial>
       <collision name='SchunkEGP40_Finger2_link_collision'>
@@ -173,4 +188,61 @@
     <pose frame=''>0 0 0 0 0 0</pose>
   </model>
 </sdf>
+<!-- S FACTOR 100
 
+Mesh Bounding Box Size 9,199991 8,597443 10,804990
+Mesh Bounding Box Diag 16,592278 
+Mesh Volume is 420,444397
+Mesh Surface is 1406,264893
+Thin shell barycenter 0,121181 0,009098 4,956856
+Center of Mass is 0,078059 -0,070996 4,726637
+Inertia Tensor is :
+| 4775,150391 -1,028430 62,695072 |
+| -1,028430 5395,350098 36,011364 |
+| 62,695072 36,011364 2797,833740 |
+Principal axes are :
+| 0,999499 -0,000257 -0,031656 |
+| -0,000181 0,999904 -0,013855 |
+| 0,031656 0,013854 0,999403 |
+axis momenta are :
+| 4777,136230 5395,849121 2795,348633 |
+
+S FACTOR 10
+
+Mesh Bounding Box Size 0,919999 0,859744 1,080499
+Mesh Bounding Box Diag 1,659228 
+Mesh Volume is 0,420444
+Mesh Surface is 14,062888
+Thin shell barycenter 0,012118 0,000910 0,495665
+Center of Mass is 0,007806 -0,007100 0,472664
+Inertia Tensor is :
+| 0,047752 -0,000010 0,000627 |
+| -0,000010 0,053954 0,000360 |
+| 0,000627 0,000360 0,027978 |
+Principal axes are :
+| 0,999499 -0,000257 -0,031656 |
+| -0,000181 0,999904 -0,013855 |
+| 0,031656 0,013854 0,999403 |
+axis momenta are :
+| 0,047771 0,053959 0,027953 |
+
+S FACTOR 1
+
+Successfully deleted 0 duplicated faces
+Applied filter Remove Duplicate Faces in 20 msec
+Mesh Bounding Box Size 0,092000 0,085974 0,108050
+Mesh Bounding Box Diag 0,165923 
+Mesh Volume is 0,000420
+Mesh Surface is 0,140623
+Thin shell barycenter 0,001212 0,000091 0,049569
+Center of Mass is 0,000781 -0,000710 0,047266
+Inertia Tensor is :
+| 0,000000 -0,000000 0,000000 |
+| -0,000000 0,000001 0,000000 |
+| 0,000000 0,000000 0,000000 |
+Principal axes are :
+| 0,999499 -0,000257 -0,031656 |
+| -0,000181 0,999904 -0,013855 |
+| 0,031656 0,013854 0,999403 |
+axis momenta are :
+| 0,000000 0,000001 0,000000 | -->

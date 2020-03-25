@@ -333,96 +333,106 @@
   </gazebo>
 
   <!-- Base -->
-    <link name="SchunkEGP40_link">
-        <inertial>
-            <mass value="1.0" />
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <inertia ixx="0.75086944724" ixy="0" ixz="0" iyy="0.76026106805" iyz="0" izz="0.01059046669" />
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40.dae" scale="1 1 1" />
-            </geometry>
-            <material name="Orange" />
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-collision.dae" scale="1 1 1" />
-            </geometry>
-        </collision>
-    </link>
+  <link name="SchunkEGP40_link">
+      <inertial>
+          <mass value="0.6" />
+          <origin rpy="0 0 0" xyz="0.00078059 -0.00070996 0.04726637" />
+          <inertia ixx="0.0011357" ixy="-0.00000024461" ixz="0.000014912" iyy="0.0012832" iyz="0.0000085651" izz="0.00066545" />
+      </inertial>
+      <visual>
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <geometry>
+              <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40.dae" scale="1 1 1" />
+          </geometry>
+          <material name="Orange" />
+      </visual>
+      <collision>
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <geometry>
+              <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-collision.dae" scale="1 1 1" />
+          </geometry>
+      </collision>
+  </link>
 
-    <!-- Finger 1 -->
-    <link name="SchunkEGP40_Finger1_link">
-        <inertial>
-            <mass value="1.0" />
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <inertia ixx="0.75086944724" ixy="0" ixz="0" iyy="0.76026106805" iyz="0" izz="0.01059046669" />
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae" scale="1 1 1" />
-            </geometry>
-            <material name="Orange" />
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
-            <geometry>
-                <box size="0.006 0.016 0.01215" />
-            </geometry>
-        </collision>
-    </link>
+  <!-- Finger 1 -->
+  <link name="SchunkEGP40_Finger1_link">
+      <inertial>
+          <mass value="0.04" />
+          <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
+          <inertia ixx="0.0000013454" ixy="0" ixz="0" iyy="0.00000061207" iyz="0" izz="0.00000097333" />
+      </inertial>
+      <visual>
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <geometry>
+              <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae" scale="1 1 1" />
+          </geometry>
+          <material name="Orange" />
+      </visual>
+      <collision>
+          <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
+          <geometry>
+              <box size="0.006 0.016 0.01215" />
+          </geometry>
+      </collision>
+  </link>
 
-    <!-- Finger 2 -->
-    <link name="SchunkEGP40_Finger2_link">
-        <inertial>
-            <mass value="1.0" />
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <inertia ixx="0.75086944724" ixy="0" ixz="0" iyy="0.76026106805" iyz="0" izz="0.01059046669" />
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae" scale="1 1 1" />
-            </geometry>
-            <material name="Orange" />
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
-            <geometry>
-                <box size="0.006 0.016 0.01215" />
-            </geometry>
-        </collision>
-    </link>
+  <!-- Finger 2 -->
+  <link name="SchunkEGP40_Finger2_link">
+      <inertial>
+          <mass value="0.04" />
+          <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
+          <inertia ixx="0.0000013454" ixy="0" ixz="0" iyy="0.00000061207" iyz="0" izz="0.00000097333" />
+      </inertial>
+      <visual>
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <geometry>
+              <mesh filename="model://schunk-egp-40/meshes/schunk-egp-40-finger-base.dae" scale="1 1 1" />
+          </geometry>
+          <material name="Orange" />
+      </visual>
+      <collision>
+          <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
+          <geometry>
+              <box size="0.006 0.016 0.01215" />
+          </geometry>
+      </collision>
+  </link>
 
-    <!-- Finger Joint 1 -->
-    <joint name="SchunkEGP40_Finger1_joint" type="prismatic">
-        <origin xyz="0.016800 0.000500 0.108000" rpy="0 0 0" />
-        <axis xyz="-1 0 0" />
-        <limit effort="1" lower="0" upper="0.01" velocity="-1" />
-        <dynamics damping="1.0" />
-        <parent link="SchunkEGP40_link" />
-        <child link="SchunkEGP40_Finger1_link" />
-    </joint>
-    <gazebo reference="SchunkEGP40_Finger1_joint">
-        <provideFeedback>1</provideFeedback>
-        <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-    
-    <!-- Finger Joint 2 -->
-    <joint name="SchunkEGP40_Finger2_joint" type="prismatic">
-        <origin xyz="-0.016800 0.000500 0.108000" rpy="0 0 3.14" />
-        <axis xyz="-1 0 0" />
-        <limit effort="1" lower="0" upper="0.01" velocity="-1" />
-        <dynamics damping="1.0" />
-        <parent link="SchunkEGP40_link" />
-        <child link="SchunkEGP40_Finger2_link" />
-    </joint>
-    <gazebo reference="SchunkEGP40_Finger2_joint">
-        <provideFeedback>1</provideFeedback>
-        <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
+  <!-- Finger Joint 1 -->
+  <joint name="SchunkEGP40_Finger1_joint" type="prismatic">
+      <origin xyz="0.016800 0.000500 0.108000" rpy="0 0 0" />
+      <axis xyz="-1 0 0" />
+      <limit effort="1" lower="0" upper="0.01" velocity="-1" />
+      <dynamics damping="1.0" />
+      <parent link="SchunkEGP40_link" />
+      <child link="SchunkEGP40_Finger1_link" />
+  </joint>
+  <gazebo reference="SchunkEGP40_Finger1_joint">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  
+  <!-- Finger Joint 2 -->
+  <joint name="SchunkEGP40_Finger2_joint" type="prismatic">
+      <origin xyz="-0.016800 0.000500 0.108000" rpy="0 0 3.14" />
+      <axis xyz="-1 0 0" />
+      <limit effort="1" lower="0" upper="0.01" velocity="-1" />
+      <dynamics damping="1.0" />
+      <parent link="SchunkEGP40_link" />
+      <child link="SchunkEGP40_Finger2_link" />
+  </joint>
+  <gazebo reference="SchunkEGP40_Finger2_joint">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+
+  <!-- Fake Tool Link -->
+  <link name="Tool_link" />
+
+  <joint name="ee_tool_joint" type="fixed">
+    <parent link="SchunkEGP40_link"/>
+    <child link="Tool_link"/>
+    <origin xyz="0 0 0.01215" rpy="0 0 0"/>
+  </joint>
+
 </robot>
