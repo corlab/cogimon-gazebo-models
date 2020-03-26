@@ -280,6 +280,10 @@
     <origin xyz="0 0 0.126" rpy="0 0 0"/>
   </joint>
 
+  <gazebo reference="iiwa7_joint_ee">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+
 <!--   <link name="iiwa7_link_ee">
   </link> -->
 
@@ -355,11 +359,21 @@
   </link>
 
   <!-- Finger 1 -->
+  <!-- For inertia calculations:
+        w(idth)  (y) =  0.006
+        h(eight) (x) =  0.016
+        d(epth)  (z) =  0.01215
+        xx = 1/12*m*(h*h+d*d),
+        yy = 1/12*m*(w*w+d*d),
+        zz = 1/12*m*(w*w+h*h)
+
+        https://www.blitzrechner.de/gewicht/
+   -->
   <link name="SchunkEGP40_Finger1_link">
       <inertial>
-          <mass value="0.04" />
+          <mass value="0.01" />
           <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
-          <inertia ixx="0.0000013454" ixy="0" ixz="0" iyy="0.00000061207" iyz="0" izz="0.00000097333" />
+          <inertia ixx="0.00000033635" ixy="0" ixz="0" iyy="0.00000015302" iyz="0" izz="0.00000024333" />
       </inertial>
       <visual>
           <origin rpy="0 0 0" xyz="0 0 0" />
@@ -379,9 +393,9 @@
   <!-- Finger 2 -->
   <link name="SchunkEGP40_Finger2_link">
       <inertial>
-          <mass value="0.04" />
+          <mass value="0.01" />
           <origin rpy="0 0 0" xyz="0 0.0005 0.006075" />
-          <inertia ixx="0.0000013454" ixy="0" ixz="0" iyy="0.00000061207" iyz="0" izz="0.00000097333" />
+          <inertia ixx="0.00000033635" ixy="0" ixz="0" iyy="0.00000015302" iyz="0" izz="0.00000024333" />
       </inertial>
       <visual>
           <origin rpy="0 0 0" xyz="0 0 0" />
@@ -426,13 +440,26 @@
       <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
 
-  <!-- Fake Tool Link -->
-  <link name="Tool_link" />
+  <!-- Fake Fixed Tool Link -->
+  <!-- <link name="Tool_link">
+      <inertial>
+          <mass value="0.01" />
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+      </inertial>
+  </link>
 
   <joint name="ee_tool_joint" type="fixed">
     <parent link="SchunkEGP40_link"/>
     <child link="Tool_link"/>
-    <origin xyz="0 0 0.01215" rpy="0 0 0"/>
+    <origin xyz="0 0 0.115" rpy="0 0 0"/>
   </joint>
 
+  <gazebo reference="ee_tool_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo> -->
+
+<!-- https://github.com/ros-industrial/kuka_experimental/pull/117 -->
+<!-- https://github.com/IFL-CAMP/iiwa_stack/issues/35 -->
+<!-- https://github.com/IFL-CAMP/iiwa_stack/issues/14 -->
 </robot>

@@ -12,7 +12,7 @@
     <link name="Waist"/>
   </group-->
   <group name="full_arm">
-    <chain base_link="iiwa7_link_0" tip_link="iiwa7_link_7"/>
+    <chain base_link="iiwa7_link_0" tip_link="SchunkEGP40_link"/>
   </group>
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
