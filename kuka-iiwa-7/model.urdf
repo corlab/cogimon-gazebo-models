@@ -1,4 +1,27 @@
 <?xml version="1.0"?>
+<!--
+<dynamics friction="10.0" damping="1.0"/>
+
+<xacro:property name="damping_factor" value="0.1"/>
+
+<xacro:property name="d0" value="${damping_factor*2.0}"/>
+<xacro:property name="d1" value="${damping_factor*1.8}"/>
+<xacro:property name="d2" value="${damping_factor*1.0}"/>
+<xacro:property name="d3" value="${damping_factor*1.5}"/>
+<xacro:property name="d4" value="${damping_factor*1.2}"/>
+<xacro:property name="d5" value="${damping_factor*1.0}"/>
+<xacro:property name="d6" value="${damping_factor*1.0}"/>
+
+<xacro:property name="friction_factor" value="1.0"/>
+
+<xacro:property name="f0" value="${friction_factor*1.0}"/>
+<xacro:property name="f1" value="${friction_factor*1.0}"/>
+<xacro:property name="f2" value="${friction_factor*1.0}"/>
+<xacro:property name="f3" value="${friction_factor*1.0}"/>
+<xacro:property name="f4" value="${friction_factor*0.4}"/>
+<xacro:property name="f5" value="${friction_factor*0.1}"/>
+<xacro:property name="f6" value="${friction_factor*0.1}"/>
+-->
 <robot name="kuka-iiwa-7" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- Fix to world just for testing -->
   <link name="world"/>
@@ -49,7 +72,9 @@
                        soft_upper_limit="2.93215314335"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="5.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_1">
@@ -81,7 +106,9 @@
                        soft_upper_limit="2.05948851735"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="5.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_2">
@@ -114,7 +141,9 @@
                        soft_upper_limit="2.93215314335"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="3.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_3">
@@ -149,7 +178,9 @@
                        soft_upper_limit="2.05948851735"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="3.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_4">
@@ -183,7 +214,9 @@
                        soft_upper_limit="2.93215314335"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="1.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_5">
@@ -217,7 +250,9 @@
                        soft_upper_limit="2.05948851735"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="1.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_6">
@@ -251,7 +286,9 @@
                        soft_upper_limit="3.01941960595"
                        k_position="100"
                        k_velocity="2"/>
-    <dynamics damping="0.5"/>
+    <!-- <dynamics damping="0.5"/> -->
+    <!-- <dynamics damping="1.0" /> -->
+    <dynamics friction="10.0" damping="1.0"/>
   </joint>
 
   <link name="iiwa7_link_7">
@@ -331,4 +368,40 @@
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
+
+    <gazebo reference="iiwa7_joint_1">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_2">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_3">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_4">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_5">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_6">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_7">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="iiwa7_joint_ee">
+        <provideFeedback>1</provideFeedback>
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
 </robot>
+
+
